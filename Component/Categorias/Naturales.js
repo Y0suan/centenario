@@ -7,12 +7,13 @@ import Link from 'next/link';
 
 import { MdArrowBackIosNew } from 'react-icons/md';
 import { MdArrowForwardIos } from 'react-icons/md';
+import Card100 from '../Card/Card100';
 
 
 
 const StyledNaturales = styled.div`
 background-color: white;
-width: 100%;
+width: 80%;
 .scroll{
     overflow: hidden;
   overflow-x: scroll;
@@ -33,6 +34,7 @@ width: 100%;
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: row;
   gap: 16px;
 `;
 
@@ -50,15 +52,15 @@ h2{
 `
 const Subtitle = styled.div`
   margin:0;
-  color:#2563eb;
+  color:#78AE17;
 `
 const ArrowLink = styled(Link)`
   margin:0;
-  color:#2563eb;
+  color:#78AE17;
   display: flex;
   align-items: center;
   .icon{
-  color:#2563eb;
+  color:#78AE17;
   }
 `
 
@@ -82,14 +84,14 @@ const Naturales = ({ cafes }) => {
 
   const handleScrollLeft = () => {
     scrollContainerRef.current.scrollBy({
-      left: -1000, // Cantidad de desplazamiento hacia la izquierda
+      left: -1300, // Cantidad de desplazamiento hacia la izquierda
       behavior: 'smooth' // Desplazamiento suave
     });
   };
 
   const handleScrollRight = () => {
     scrollContainerRef.current.scrollBy({
-      left: 1000, // Cantidad de desplazamiento hacia la derecha
+      left: 1300, // Cantidad de desplazamiento hacia la derecha
       behavior: 'smooth' // Desplazamiento suave
     });
   };

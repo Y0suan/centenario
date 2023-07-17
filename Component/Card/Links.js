@@ -7,20 +7,17 @@ const  ContLink = styled(Link)`
    
 p{
     align-items: center;
-    display:flex;
     padding : 8px 16px ;
     margin: 0;
     color:#222222;
     font-size: 16px;
     line-height: 20px;
-    font-weight: 500;
-   
+    font-weight: 400;
+
 }
 :hover{
-    p{
-        border-left: 3px solid blue;
-        background-color:blue;
-    }
+    font-weight: 600;
+    border-left: 2px solid #222222 ;
     }
 `
 

@@ -21,7 +21,7 @@ height: max-content;
   transition: max-height 0.7s ease-in-out;
   padding: 0;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
+  border-radius: 2px;
   background-color: white;
   z-index: 1;
 

@@ -22,6 +22,7 @@ import Restos from '@/Component/Drops/Bares';
 import Culturales from '@/Component/Categorias/Culturales';
 import Naturales from '@/Component/Categorias/Naturales';
 import Eventos from '@/Component/Categorias/Eventos';
+import Card100 from '@/Component/Card/Card100';
 
 
 const GastronomiaCont = styled.div`
@@ -172,49 +173,11 @@ const Atractivos = ({culturales,naturales,eventos,deliveri}) => {
     </Center>
     <Info>
           <Naturales cafes={naturales}></Naturales>
-          <Culturales cafes={culturales}></Culturales>
-          
-          {/* <Eventos cafes={eventos} ></Eventos> */}
-          {/* <LinksAdicionales>
-          <div className='mitadCont' >
-            <h2>No te pierdas de nada </h2>
-            <div className='link'>
-            <ComidaRapida comidaRapida={deliveri} />
-            <div>
-              <h4>Comida Rapida</h4>
-              <p>Pidelo donde sea que estes</p>
-            </div>
-            </div>
-
-            <div className='link'>
-            <Heladerias comidaRapida={helados} />
-            <div>
-              <h4>Heladerias</h4>
-              <p>Pidelo donde sea que estes</p>
-            </div>
-            </div>
-
-            <div className='link'>
-            <Cafes comidaRapida={cafes} />
-            <div>
-              <h4>Cafeterias</h4>
-              <p>Pidelo donde sea que estes</p>
-            </div>
-            </div>
-
-            <div className='link'>
-            <Restos comidaRapida={cafes} />
-            <div>
-              <h4>Bares y Restaurantes</h4>
-              <p>Pidelo donde sea que estes</p>
-            </div>
-            </div>
-
-          </div>
-          <div className='imgCont' >
-            <img src='https://res.cloudinary.com/dzqdjsrez/image/upload/v1688414999/agenda-next-panel/v8exwpgfg7yacmeyuaxq.jpg' ></img>
-          </div>
-          </LinksAdicionales> */}
+          <Center>
+          {culturales?.map((natural) => (
+              <Card100 key={natural._id} {...natural} />
+            ))}
+            </Center>
     </Info>
     </>
 

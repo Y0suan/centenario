@@ -27,10 +27,11 @@ const ImgCont = styled.div`
   height: 280px;
   position:relative;
   img {
+    transition: 1s;
     height: 100%;
   }
   h4{
-    background-color: rgba(0,0,0,0.5914740896358543);
+    background-color: rgba(0,0,0,0.57);
     color:white;
     padding:8px;
     bottom:20px;
@@ -38,6 +39,18 @@ const ImgCont = styled.div`
     text-transform: uppercase;
     z-index: 1;
   }
+  .link{
+    display:none;
+  }
+  :hover{
+      transition: 1s;
+    img{
+      height: 110%;
+    }
+    h4{
+    background-color: rgba(0,0,0,0.9);
+    }
+    }
 `;
 
 const Text = styled.div`
@@ -62,18 +75,21 @@ const Text = styled.div`
 
 const LinkInfo = styled(Link)`
 text-decoration: none;
-color:#2563eb;
+color:#78AE17;
 `;
 
 const LinkRedes= styled.div`
-width: 100%;
+position:absolute;
+background-color: white;
 display: flex;
 justify-content: space-between;
 justify-content: end;
+right: 0;
+border-bottom-left-radius: 6px;
 .icon{
   color: black;
-  font-size: 1.2rem;
-  margin-left: 8px;
+  font-size: 1.5rem;
+  padding:8px;
 }
 `;
 
@@ -108,6 +124,9 @@ export default function Card({
   return (
     <StyledCard>
       <ImgCont>
+      <LinkRedes className='link' >
+      <Link href={hubicacion} ><FiMapPin className='icon'/></Link>
+      </LinkRedes>
       <LinkInfo href={url}>
         <img src={images?.[0]} alt={title} />
         <h4>{title}</h4>
@@ -117,16 +136,12 @@ export default function Card({
         {/* <h4>{title}</h4> */}
         <p>{limitedDescription} <LinkInfo href={url}> Leer mas</LinkInfo> </p>
       </Text>
-      <LinkRedes>
-       
-
-      
+      {/* <LinkRedes>
       <Link href={facebook} > <FiFacebook className='icon' /></Link>
-      {/* <Link href={'/'} ><AiOutlineWhatsApp className='icon'/></Link>  */}
+      <Link href={'/'} ><AiOutlineWhatsApp className='icon'/></Link> 
       <Link href={instagram}><AiOutlineInstagram className='icon'/></Link>
       <Link href={hubicacion} ><FiMapPin className='icon'/></Link>
-
-      </LinkRedes>
+      </LinkRedes> */}
     </StyledCard>
   );
 }

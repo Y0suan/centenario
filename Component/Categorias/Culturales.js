@@ -7,6 +7,7 @@ import Link from 'next/link';
 
 import { MdArrowBackIosNew } from 'react-icons/md';
 import { MdArrowForwardIos } from 'react-icons/md';
+import Card100 from '../Card/Card100';
 
 
 

@@ -23,6 +23,7 @@ import Kayak from '@/Component/Drops/Kayak';
 import Senderismo from '@/Component/Drops/Senderismo';
 import Cicloturismo from '@/Component/Drops/Cicloturismo';
 import Card from '@/Component/Card/Card';
+import Gastronomia from '@/Component/Gastronomia';
 
 
 const GastronomiaCont = styled.div`
@@ -150,43 +151,11 @@ const Imperdible = ({cicloturismo,senderismo,kayak,imperdible}) => {
   return (
     <>
     <Header/>
-    <Center>
-      <GastronomiaCont>
-        <Title>Imperdible</Title>
-        <Subtitle>Descubre <Link href={'/'} className='maps'>Eldorado, Misiones</Link></Subtitle>
-        {/* <ImgCont>
-         <div className='mitad'>
-          <img src='https://res.cloudinary.com/dzqdjsrez/image/upload/v1688424667/agenda-next-panel/jdtva8nkkrm0tkctaa4d.jpg' ></img>
-         </div>
-         <div  className='mitad adapter' >
-         <div className='mitad2'>
-          <img src='https://res.cloudinary.com/dzqdjsrez/image/upload/v1688426817/agenda-next-panel/pfremtw6ntvnt14y5cr8.jpg' ></img>
-         </div>
-          <div className='mitad2'>
-            <img src='https://res.cloudinary.com/dzqdjsrez/image/upload/v1688424528/agenda-next-panel/owo34x32evpelenq7ukk.jpg' ></img>
-          </div>
-          <div className='mitad2'>
-          <img src='https://res.cloudinary.com/dzqdjsrez/image/upload/v1688423209/agenda-next-panel/tq32jj2ivcwbopa4fw7m.jpg' ></img>
-          </div>
-          <div className='mitad2'>
-          <img src='https://res.cloudinary.com/dzqdjsrez/image/upload/v1688423406/agenda-next-panel/wjqsremmwq5dlxk0sna7.jpg' ></img>
-          </div>
-         </div>
-        </ImgCont> */}
-      </GastronomiaCont>
-
-    </Center>
-    <Info>
+    
+      <Gastronomia naturales={imperdible} />
     
 
-             <Center>
-              <Flex>
-              {imperdible?.map((natural) => (
-              <Card key={natural._id} {...natural} />
-            ))}
-              </Flex>
-             </Center>
-      
+    <Info>
           <LinksAdicionales>
           <div className='mitadCont' >
             <h2>No te pierdas de nada </h2>

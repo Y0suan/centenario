@@ -27,16 +27,18 @@ margin:16px auto;
 padding:0 24px;
 h2{
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  margin:8px;
-  margin-bottom: 16px;
+  margin:2rem;
+  margin-bottom: 32px;
   color:white;
   text-transform:uppercase;
-  font-size: 32px;
+  font-size: 2rem;
+  font-weight: bold;
   p{
     padding-left:8px;
     text-transform: lowercase;
-    font-weight: 400;
+    font-weight:300;
   }
 }
 `
@@ -61,10 +63,7 @@ const Gastronomia = ({naturales}) => {
     <StyledNaturales>
         <Center>
           {/* <Subtitle>Eldorado Misiones</Subtitle> */}
-          <h2>Imperdibles: <p> Descubri Eldorado</p>
-            {/* <ArrowLink href={'/Imperdibles'} >
-            <MdOutlineArrowForwardIos className='icon' />
-            </ArrowLink> */}
+          <h2>Imperdibles: <p>Productos unicos eldoradenses</p>
           </h2>
             <Wrapper>
               {naturales.map((natural) => (

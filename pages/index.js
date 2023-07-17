@@ -20,6 +20,7 @@ import Restos from '@/Component/Drops/Bares';
 import Kayak from '@/Component/Drops/Kayak';
 import Senderismo from '@/Component/Drops/Senderismo';
 import Cicloturismo from '@/Component/Drops/Cicloturismo';
+import Footer from "@/Component/footer";
 
 
 
@@ -116,6 +117,9 @@ export default function HomePage({hoteles,cafes,kayak,cicloturismo,senderismo}){
             <img src='https://res.cloudinary.com/dzqdjsrez/image/upload/v1688422550/agenda-next-panel/inyrov7cesjdunjm5dme.jpg' ></img>
           </div>
           </LinksAdicionales>
+        
+        <Footer/>
+    
 
     </div>
   );
