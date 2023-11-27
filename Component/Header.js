@@ -7,97 +7,57 @@ import Center from './Center'
 import { RiMenu2Line } from 'react-icons/ri';
 
 const StyledHeader = styled.div`
-
-`
-const Logo = styled(Link)`
-text-decoration:none; 
-position:relative;
-z-index:3;
-img{
-  width: 10rem;
-}
-@media screen and (min-width:768px){
-  img{
-  width: 16rem;
- }
-}
-`
-
-const Wrapper = styled.div`
+background-image: linear-gradient(6deg, rgba(12,10,92,0.7287289915966386) 0%, rgba(6,14,70,0.7287289915966386) 100%), url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Posadas_-_Centro_-_Casa_de_Gobierno_de_Misiones.JPG/1024px-Posadas_-_Centro_-_Casa_de_Gobierno_de_Misiones.JPG');
+width: 100%;
+height: 70vh;
+background-size: cover;
 display: flex;
+justify-content: center;
 align-items: center;
-justify-content: space-between;
-padding:24px 0;
-flex-wrap: wrap;
+flex-direction: column;
 `
 
-const StyledNav = styled.nav`
-${props => props.mobileNavActive ? `
-display: block;
-`: `
-display: none;
-` }
-z-index: 1;
-gap:16px;
-position:fixed;
-top:0;
-bottom:0;
-left: 0;
-right:0;
-padding: 80px 30px 20px;
-background-color: white;
-@media screen and (min-width:768px){
-  display: flex;
-  position: static;
-  padding: 0;
-  background-color: white;
-}
-`
 
-const NavLink = styled(Link)`
-display:block;
-text-decoration: none;
-color:#aaa;
-padding:10px 0; 
-@media screen and (min-width:768px){
-  padding:0;
-}
-`
-const NavButton = styled.button`
-border: none;
-background-color:transparent;
-color:#aaa;
-cursor:pointer;
-width:50px;
-height:50px;
-font-size: 24px;
-position:relative;
-z-index:3;
-@media screen and (min-width:768px){
-  display: none;
-}
-`
 
 const Header = () => {
-  const [mobileNavActive , setMobileNavActive] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+
+  const toggleForm = () => {
+    setShowForm(!showForm);
+  };
   return (
     <StyledHeader>
-        <Center>
-            <Wrapper>
-            <Logo href={'/'} >  <img src="https://firebasestorage.googleapis.com/v0/b/intercolegiales-7e519.appspot.com/o/icon%2Flogo.png?alt=media&token=3e72026c-d7da-4476-a09a-a8c6605ccfaa&_gl=1*1ms8xlq*_ga*MTg2NDc4NDEzMC4xNjc2MjgwOTk0*_ga_CW55HF8NVT*MTY4NTUzMTg0MS44LjEuMTY4NTUzMTg4OC4wLjAuMA.."></img></Logo>
-        <StyledNav mobileNavActive={mobileNavActive} >
-            <NavLink href={'/'} >Inicio</NavLink>
-            <NavLink href={'/Atractivos'} >Atractivos</NavLink>
-            <NavLink href={'/Actividades'} >Actividades</NavLink>
-            <NavLink href={'/Alojamiento'} >Alojamiento</NavLink>
-            <NavLink href={'/Gastronomia'} >Gastronomia</NavLink>
-            <NavLink href={'/Imperdible'} >Imperdible</NavLink>
-        </StyledNav>
-        <NavButton onClick={ () => setMobileNavActive(prev => !prev)} >
-          <RiMenu2Line/>
-        </NavButton>
-            </Wrapper>
-        </Center>
+      
+      <h1>Registro Único de Audiencias
+de Gestión de Intereses</h1>
+      <form  >
+        <input type="text" name="searchQuery" placeholder="Buscar..." />
+        <button className='btn-primary ' type="submit">Buscar</button>
+      </form>
+  
+
+
+      <button className="btn-secondari" onClick={toggleForm}>
+Personalizá tu búsqueda
+      </button>
+      <form style={{ display: showForm ? 'block' : 'none' }}>
+        {/* Aquí tus campos de formulario */}
+        {/* Por ejemplo: */}
+        <div className='filtros' >
+        <label>Fecha</label>
+        <input className='input-secondari' type="date" name="field1" placeholder="Campo 1" />
+        </div>
+        <div className='filtros'>
+          <label>Motivo</label>
+        <input className='input-secondari' type="text" name="field2" placeholder="Motivo de la audiencia" />
+        </div>
+        {/* <button className="btn-primary" type="submit">
+          Enviar
+        </button> */}
+      </form>
+      <div className='flex ' >
+
+      </div>
     </StyledHeader>
   )
 }

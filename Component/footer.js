@@ -7,19 +7,7 @@ import styled from 'styled-components';
 const Footer = () => {
   return (
     <FootCont>
-        <img src='https://firebasestorage.googleapis.com/v0/b/intercolegiales-7e519.appspot.com/o/icon%2Flogo.png?alt=media&token=3e72026c-d7da-4476-a09a-a8c6605ccfaa&_gl=1*1ms8xlq*_ga*MTg2NDc4NDEzMC4xNjc2MjgwOTk0*_ga_CW55HF8NVT*MTY4NTUzMTg0MS44LjEuMTY4NTUzMTg4OC4wLjAuMA..'></img>
-        <ContLink>
-            <NavLink href={'/Atractivos'} >Atractivos</NavLink>
-            <NavLink href={'/Actividades'} >Actividades</NavLink>
-            <NavLink href={'/Alojamiento'} >Alojamiento</NavLink>
-            <NavLink href={'/Gastronomia'} >Gastronomia</NavLink>
-            <NavLink href={'/Imperdible'} >Imperdible</NavLink>
-        </ContLink> 
-        <ContLink>
-            <IconLink href={'/'} ><BiLogoFacebook/></IconLink>
-            <IconLink href={'/'} ><BiLogoInstagram/></IconLink>
-            <IconLink href={'/'} ><BiLogoWhatsapp/></IconLink>
-        </ContLink>   
+   
     </FootCont>
   )
 }
