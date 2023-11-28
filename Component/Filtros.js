@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AuditoriasVIew from './AuditoriasVIew';
 
-const Filtros = () => {
+const Filtros = ({ searchResults }) => {
   const [products, setProducts] = useState([]);
   const [allParticipants, setAllParticipants] = useState([]);
   const [selectedParticipant, setSelectedParticipant] = useState('');
@@ -19,7 +19,7 @@ const Filtros = () => {
   }, []);
 
   useEffect(() => {
-    const participants = products.reduce((acc, product) => {
+    const participants = searchResults.reduce((acc, product) => {
       if (Array.isArray(product.participants)) {
         product.participants.forEach(participant => {
           acc.push(participant);
@@ -28,7 +28,7 @@ const Filtros = () => {
       return acc;
     }, []);
     setAllParticipants(participants);
-  }, [products]);
+  }, [searchResults]);
 
   const handleParticipantChange = (participantName) => {
     setSelectedParticipant(participantName);
@@ -36,10 +36,9 @@ const Filtros = () => {
 
   const handleSearch = (event) => {
     event.preventDefault();
-    const filtered = products.filter(product => product.fecha.includes(searchDate));
+    const filtered = searchResults.filter(product => product.fecha.includes(searchDate));
     setFilteredProducts(filtered);
   };
-
   return (
     <div className='cont'>
       <div className='filtros'>
@@ -75,7 +74,7 @@ const Filtros = () => {
           </div>
         </div>
       </div>
-      <AuditoriasVIew products={filteredProducts}></AuditoriasVIew>
+      <AuditoriasVIew searchResults={searchResults}></AuditoriasVIew>
     </div>
   );
 };

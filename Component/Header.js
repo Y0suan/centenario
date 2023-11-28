@@ -1,10 +1,8 @@
-import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Center from './Center'
-
-
-import { RiMenu2Line } from 'react-icons/ri';
+import axios from 'axios';
+import Filtros from './Filtros';
+import AuditoriasVIew from './AuditoriasVIew';
 
 const StyledHeader = styled.div`
 background-image: linear-gradient(6deg, rgba(12,10,92,0.7287289915966386) 0%, rgba(6,14,70,0.7287289915966386) 100%), url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Posadas_-_Centro_-_Casa_de_Gobierno_de_Misiones.JPG/1024px-Posadas_-_Centro_-_Casa_de_Gobierno_de_Misiones.JPG');
@@ -25,20 +23,63 @@ padding-top: 2rem;
 
 
 const Header = () => {
+  const [products, setProducts] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  
+  
+  useEffect(() => {
+    axios.get('/api/product')
+      .then(resonse => {
+        setProducts(response.data);
+        console.log('Resultados iniciales:', response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching products:', error);
+      });
+  }, []);
+
+  const handleSearch = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.get(`/api/product?search=${searchQuery}`);
+      setSearchResults(response.data);
+      setProducts([]); // Reinicia los productos para mostrar los resultados de la búsqueda
+    } catch (error) {
+      console.error('Error searching products:', error);
+    }
+  };
+
+  const handleInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
   const [showForm, setShowForm] = useState(false);
 
   const toggleForm = () => {
     setShowForm(!showForm);
   };
+
+
   return (
+    <div>
     <StyledHeader>
       
-      <h1>Registro Único de Audiencias
-de Gestión de Intereses</h1>
-      <form className='formHeader' >
-        <input type="text" name="searchQuery" placeholder="Buscar..." />
-        <button className='btn-primary ' type="submit">Buscar</button>
-      </form>
+    <h1>Registro Único de Audiencias de Gestión de Intereses</h1>
+        <form className='formHeader' onSubmit={handleSearch}>
+          <input
+            type="text"
+            name="searchQuery"
+            placeholder="Buscar..."
+            value={searchQuery}
+            onChange={handleInputChange}
+          />
+          <button className='btn-primary' type="submit">
+            Buscar
+          </button>
+        </form>
+
   
 
 
@@ -60,10 +101,12 @@ Personalizá tu búsqueda
           Enviar
         </button> */}
       </form>
-      <div className='flex ' >
-
-      </div>
     </StyledHeader>
+    <div className='contResult'>
+        {/* Envía los resultados de la búsqueda al componente Filtros */}
+        <Filtros  searchResults={searchResults} />
+      </div>
+    </div>
   )
 }
 

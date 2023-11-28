@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const AuditoriasVIew = () => {
+const AuditoriasVIew = ({searchResults}) => {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -24,7 +24,7 @@ const AuditoriasVIew = () => {
   return (
     <div className='cont-view'>
       <div className="cont-auditorias">
-        {products.map(product => (
+        {searchResults.map(product => (
           <div className="div-card" key={product._id} onClick={() => handleCardClick(product)}>
             <div>
               <p className="subtitle">Fecha</p>

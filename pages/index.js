@@ -9,10 +9,6 @@ export default function HomePage(){
     <div>
       <Header/>
       
-      <div  className="body">
-        <Filtros></Filtros>
-
-      </div>
       
     </div>
   );

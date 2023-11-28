@@ -68,7 +68,7 @@ label{
   }
 
 p{
-    @apply text-sm
+    @apply text-sm m-0;
 }
 .div-card {
     @apply bg-white p-4 flex gap-6 rounded-md shadow-xl border-gray-500 border-r-4 border-2;
@@ -83,11 +83,11 @@ p{
     }
   }
 .div-card:hover{
-    @apply border-r-blue-600
+    @apply border-r-blue-600 border-r-4;
 }
 
 .subtitle{
-    @apply text-gray-500  text-base;
+    @apply text-gray-500  text-base mt-1;
 }
 .cont-auditorias{
     @apply flex flex-col gap-4 m-4  ;
@@ -175,4 +175,7 @@ p{
     cursor: pointer;
     font-size: 20px;
   }
-  
+  .contResult{
+    display: flex;
+    justify-content: center;
+  }
