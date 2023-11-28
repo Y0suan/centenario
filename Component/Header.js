@@ -15,6 +15,11 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
+@media (max-width: 740px) {
+height  :auto ;
+padding-bottom: 2rem;
+padding-top: 2rem;
+}
 `
 
 
@@ -30,7 +35,7 @@ const Header = () => {
       
       <h1>Registro Único de Audiencias
 de Gestión de Intereses</h1>
-      <form  >
+      <form className='formHeader' >
         <input type="text" name="searchQuery" placeholder="Buscar..." />
         <button className='btn-primary ' type="submit">Buscar</button>
       </form>
@@ -43,11 +48,11 @@ Personalizá tu búsqueda
       <form style={{ display: showForm ? 'block' : 'none' }}>
         {/* Aquí tus campos de formulario */}
         {/* Por ejemplo: */}
-        <div className='filtros' >
+        <div className='filtrosHeader' >
         <label>Fecha</label>
         <input className='input-secondari' type="date" name="field1" placeholder="Campo 1" />
         </div>
-        <div className='filtros'>
+        <div className='filtrosHeader'>
           <label>Motivo</label>
         <input className='input-secondari' type="text" name="field2" placeholder="Motivo de la audiencia" />
         </div>

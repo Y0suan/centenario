@@ -4,17 +4,11 @@ import Filtros from "@/Component/Filtros";
 import Header from "@/Component/Header";
 
 
-
-
-
-
-
-
 export default function HomePage(){
   return(
     <div>
       <Header/>
-      {/* <AuditoriasVIew></AuditoriasVIew> */}
+      
       <div  className="body">
         <Filtros></Filtros>
 

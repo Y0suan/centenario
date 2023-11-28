@@ -11,11 +11,27 @@
 h1{
     @apply text-white mb-4 text-4xl w-1/2 text-center font-semibold;
 }
+@media (max-width: 740px) {
+    h1{
+        @apply  mb-4 text-2xl w-3/4;
+    }
+}
 h2{
     @apply text-gray-500 mb-4 text-2xl font-medium;
 }
 input{
     @apply w-96 p-2 rounded mr-2
+}
+@media (max-width: 740px) {
+    input{
+        @apply  w-72 p-1 mr-0 mb-2;
+    }
+
+.formHeader{
+    display: flex;
+    flex-direction: column;
+
+}
 }
 label{
     @apply text-white ;
@@ -25,18 +41,31 @@ label{
     @apply text-gray-500 mb-4 text-lg font-medium; 
 }
 .input-secondari{
-    @apply w-96 p-1 rounded mr-2 max-w-fit
+    @apply p-1 rounded mr-2 max-w-fit
 }
 .btn-primary{
     @apply bg-blue-600 text-white px-4 py-2 rounded-sm shadow-sm;
+}
+@media (max-width: 740px) {
+.btn-primary{
+    @apply px-2 py-1 rounded-sm shadow-sm;
+}
 }
 .btn-secondari{
     @apply text-start text-white py-2 rounded-sm ;
 
 }
+.filtrosHeader{
+    @apply flex  flex-col w-80 gap-0 p-4 ml-0;
+}
 .filtros{
     @apply flex  flex-col w-80 gap-4 p-4 ml-4;
 }
+@media (max-width: 768px) {
+    .filtros {
+        display: none
+    }
+  }
 
 p{
     @apply text-sm
@@ -48,7 +77,7 @@ p{
   }
   
   /* Utiliza clases responsivas para modificar el ancho según el tamaño de la pantalla */
-  @media (min-width: 740px) {
+  @media (max-width: 740px) {
     .div-card {
       width: 100%; /* Ancho del 50% en dispositivos con un ancho mayor o igual a 640px (md) */
     }
@@ -64,6 +93,12 @@ p{
     @apply flex flex-col gap-4 m-4  ;
     width: 540px; 
 }
+@media (max-width: 740px) {
+    .cont-auditorias{
+        @apply flex flex-col gap-4 m-4  ;
+        width: 100%; 
+    }
+  }
 .cont-participantes{
     @apply flex gap-4
 }
@@ -93,6 +128,16 @@ p{
     margin: 10px;
     border: 1px solid #ccc;
     cursor: pointer;
+  }
+  @media (max-width: 740px) {
+    .div-card {
+        @apply bg-white p-4 flex gap-6 rounded-md shadow-xl;
+        width: 320px;
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+      }
   }
   
   /* Estilos para el modal */
