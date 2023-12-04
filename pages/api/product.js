@@ -1,85 +1,39 @@
 import { mongooseConnect } from "@/lib/mongoose";
 import { Product } from "@/models/Product";
 
-export default async function handle(req, res) {
-    const { method } = req;
+
+
+export default async function handle(req, res){
+    const {method} = req;
     await mongooseConnect();
 
 
 
-    if (method === 'GET') {
-        if (req.query?.id) {
-          try {
-            const product = await Product.findOne({ _id: req.query.id });
-            console.log('Producto encontrado por ID:', product);
-            res.json(product);
-          } catch (error) {
-            res.status(500).json({ error: 'Error al obtener el producto.' });
-          }
-        } else if (req.query?.search) { // Handle search logic here
-          try {
-            const searchQuery = req.query.search;
-            const products = await Product.find({
-                $or: [
-                    { interes: new RegExp(searchQuery, 'i') }, // Búsqueda insensible a mayúsculas y minúsculas
-                    { sintesis: new RegExp(searchQuery, 'i') },
-                ]
-            });
-            console.log('Productos encontrados por búsqueda:', products);
-            res.json(products);
-          } catch (error) {
-            res.status(500).json({ error: 'Error al buscar productos.' });
-          }
-        } else {
-          try {
-            const products = await Product.find();
-            console.log('Todos los productos:', products);
-            res.json(products);
-          } catch (error) {
-            res.status(500).json({ error: 'Error al obtener los productos.' });
-          }
-        }
-      }
-      
-
-    if (method === 'POST') {
-        const {
-            interes, sintesis, motivo, direccion, lugar, fecha, participants,
-        } = req.body;
-
-        try {
-            const productDoc = await Product.create({
-                interes, sintesis, motivo, direccion, lugar, fecha, participants,
-            });
-            res.json(productDoc);
-        } catch (error) {
-            res.status(500).json({ error: `Error al crear el producto: ${error.message}` });
+    if (method === 'GET'){
+        if (req.query?.id){
+            res.json(await Product.findOne({_id:req.query.id}));
+        }else{
+            res.json(await Product.find());
         }
     }
 
-    if (method === 'PUT') {
-        const {
-            interes, sintesis, motivo, direccion, lugar, fecha, participants, _id,
-        } = req.body;
+    if (method === 'POST'){
+        const {title,description,whatsapp,images,category,properties,hubicacion,fecha,} = req.body;
+        const productDoc = await Product.create({
+            title,description,whatsapp,images,category,properties,hubicacion,fecha,
+        })
+        res.json(productDoc);
+    }
+    if (method === 'PUT'){
+        const {title,description,whatsapp,images,category,properties,hubicacion,fecha,_id} = req.body;
+        await Product.updateOne({_id},{title,description,whatsapp,images,category,properties,hubicacion,fecha,});
+        res.json(true);
+    }
 
-        try {
-            await Product.updateOne({ _id }, {
-                interes, sintesis, motivo, direccion, lugar, fecha, participants,
-            });
+    if (method === 'DELETE'){
+        if (req.query?.id){
+            await Product.deleteOne({_id:req.query?.id});
             res.json(true);
-        } catch (error) {
-            res.status(500).json({ error: 'Error al actualizar el producto.' });
-        }
-    }
-
-    if (method === 'DELETE') {
-        if (req.query?.id) {
-            try {
-                await Product.deleteOne({ _id: req.query.id });
-                res.json(true);
-            } catch (error) {
-                res.status(500).json({ error: 'Error al eliminar el producto.' });
-            }
         }
     }
 }

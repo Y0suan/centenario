@@ -1,12 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap');
 
 .body{
     display: flex;
     width: 100%;
-    justify-content: center
-}
+    flex-direction: column;
+    height: auto;
+  
+  }
 
 h1{
     @apply text-white mb-4 text-4xl w-1/2 text-center font-semibold;
@@ -20,7 +23,7 @@ h2{
     @apply text-gray-500 mb-4 text-2xl font-medium;
 }
 input{
-    @apply w-96 p-2 rounded mr-2
+    @apply w-40 p-1 rounded  bg-slate-200 
 }
 @media (max-width: 740px) {
     input{
@@ -178,4 +181,116 @@ p{
   .contResult{
     display: flex;
     justify-content: center;
+  }
+
+  .cont-Header{
+    @apply w-screen  flex justify-between px-5 ; 
+  }
+  .logo-Cont{
+    font-family: 'EB Garamond', serif;
+    @apply flex items-center p-3 items-center w-fit gap-4;
+  }
+  .logo{
+    @apply text-black m-0 p-0 w-auto
+  }
+  
+  .logo-icon{
+    font-family: 'EB Garamond', serif;
+    @apply m-0 p-0 bg-black text-white px-3 text-4xl rounded-sm shadow-sm;  
+  }
+
+  @media (max-width: 768px){
+    .cont-Header{
+      @apply w-screen  flex px-5 flex-col justify-center items-center; 
+    }
+  }
+
+
+  .btn-buscar{
+    
+  }
+  .buscador-icon{
+    @apply text-gray-400  w-6 border-gray-400 
+  }
+  .formHeader{
+    @apply  flex items-center gap-2;
+  }
+
+  .cont-Nav{
+    @apply flex w-screen justify-evenly;
+  }
+  .nav-link{
+    @apply text-gray-500
+  }
+  .nav-link:hover{
+    @apply  text-gray-600;
+    /* //underline decoration-1 */
+  } 
+
+
+
+
+  .layer-Principal{
+    @apply px-10 py-5 ;
+    width: 100%;
+    height: 70vh;
+  }
+  .layer{
+    background-image:linear-gradient(6deg, rgba(44, 43, 46, 0.708) 0%, rgba(65, 65, 68, 0.338) 100%), url('https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    width: 100%;
+    height: 100%;
+    background-color: #444444;
+    @apply rounded-sm p-10;
+  }
+  .layer h2{
+    @apply text-5xl w-1/2 text-white;
+    font-family: 'EB Garamond', serif;
+  }
+  .layer h3{
+    @apply w-1/2 text-white;
+    font-family: 'EB Garamond', serif;
+  }
+
+
+
+  .card{
+   width: auto;
+   height: fit-content;
+   display: flex;
+   gap: 8px;
+  }
+  .img img{
+    width: 150px;
+    height: 100%;
+  }
+  .text{
+    width: 300px;
+    @apply flex gap-2 flex-col p-2 ;
+  }
+  .text h2{
+    @apply text-gray-800 text-xl font-medium m-0 ;
+  }
+  .text p{
+    @apply text-xs text-gray-500 ;
+  }
+  .text div{
+    @apply flex gap-1
+  }
+  .text a{
+    @apply text-xs
+  }
+  .text a:hover{
+    @apply font-normal text-gray-800
+  }
+
+  .ContEventSemana{
+    @apply w-screen h-96 px-10 mt-10;
+  }
+  .ContEventSemana h1{
+    @apply text-4xl text-gray-800 block w-fit m-0 p-0 ;  
+    font-family: 'EB Garamond', serif;
+  }
+  .EventSemanaContCard{
+    @apply border-t-2 border-gray-800 flex flex-wrap gap-4 p-4;
+    width: 100%;
   }
