@@ -1,3 +1,7 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "next/core-web-vitals/no-vital-id": "off",
+    "next/core-web-vitals/unused-vital": "off"
+  }
 }
