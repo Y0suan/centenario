@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const CardChica = ({ produc }) => {
@@ -13,7 +14,7 @@ export const CardChica = ({ produc }) => {
       <div className='img'>
         {/* Mostrar solo la primera imagen si existen imágenes */}
         {produc.images.length > 0 && (
-          <img src={produc.images[0]} alt='Product' /> 
+          <Image src={produc.images[0]} alt='Product' /> 
         )}
       </div>
       <div className='text'>
