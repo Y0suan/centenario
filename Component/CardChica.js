@@ -14,7 +14,7 @@ export const CardChica = ({ produc }) => {
       <div className='img'>
         {/* Mostrar solo la primera imagen si existen imágenes */}
         {produc.images.length > 0 && (
-          <Image src={produc.images[0]} alt='Product' /> 
+          <img src={produc.images[0]} alt='Product' /> 
         )}
       </div>
       <div className='text'>
