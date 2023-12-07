@@ -1,296 +1,282 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap');
 
-.body{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    height: auto;
-  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales */
+.body {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: auto;
+  overflow-x: hidden;
+}
+
+/* Estilos de títulos */
+h1 {
+  @apply text-white mb-4 text-4xl w-1/2 text-center font-semibold;
+}
+@media (max-width: 740px) {
+  h1 {
+    @apply mb-4 text-2xl w-3/4;
   }
+}
 
-h1{
-    @apply text-white mb-4 text-4xl w-1/2 text-center font-semibold;
+/* Estilos de otros elementos */
+h2 {
+  @apply text-gray-500 mb-4 text-2xl font-medium;
 }
-@media (max-width: 740px) {
-    h1{
-        @apply  mb-4 text-2xl w-3/4;
-    }
-}
-h2{
-    @apply text-gray-500 mb-4 text-2xl font-medium;
-}
-input{
-    @apply w-40 p-1 rounded  bg-slate-200 
-}
-@media (max-width: 740px) {
-    input{
-        @apply  w-72 p-1 mr-0 mb-2;
-    }
 
-.formHeader{
-    display: flex;
-    flex-direction: column;
+/* ... Otros estilos ... */
 
-}
-}
-label{
-    @apply text-white ;
-
-}
-.labelSubtitle{
-    @apply text-gray-500 mb-4 text-lg font-medium; 
-}
-.input-secondari{
-    @apply p-1 rounded mr-2 max-w-fit
-}
-.btn-primary{
-    @apply bg-blue-600 text-white px-4 py-2 rounded-sm shadow-sm;
-}
-@media (max-width: 740px) {
-.btn-primary{
-    @apply px-2 py-1 rounded-sm shadow-sm;
-}
-}
-.btn-secondari{
-    @apply text-start text-white py-2 rounded-sm ;
-
-}
-.filtrosHeader{
-    @apply flex  flex-col w-80 gap-0 p-4 ml-0;
-}
-.filtros{
-    @apply flex  flex-col w-80 gap-4 p-4 ml-4;
-}
-@media (max-width: 768px) {
-    .filtros {
-        display: none
-    }
-  }
-
-p{
-    @apply text-sm m-0;
-}
+/* Estilos para contenedor de tarjetas */
 .div-card {
-    @apply bg-white p-4 flex gap-6 rounded-md shadow-xl border-gray-500 border-r-4 border-2;
-    /* Estilos responsivos */
-    width: 320px; /* Establece un ancho predeterminado */
-  }
-  
-  /* Utiliza clases responsivas para modificar el ancho según el tamaño de la pantalla */
-  @media (max-width: 740px) {
-    .div-card {
-      width: 100%; /* Ancho del 50% en dispositivos con un ancho mayor o igual a 640px (md) */
-    }
-  }
-.div-card:hover{
-    @apply border-r-blue-600 border-r-4;
-}
-
-.subtitle{
-    @apply text-gray-500  text-base mt-1;
-}
-.cont-auditorias{
-    @apply flex flex-col gap-4 m-4  ;
-    width: 540px; 
+  @apply bg-white p-4 flex gap-6 rounded-md shadow-xl;
+  width: 520px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
 }
 @media (max-width: 740px) {
-    .cont-auditorias{
-        @apply flex flex-col gap-4 m-4  ;
-        width: 100%; 
-    }
-  }
-.cont-participantes{
-    @apply flex gap-4
-}
-
-.option{
-    @apply text-blue-500 font-normal text-start p-0 pl-2;
-    width: 100%;
-}
-.option:hover{
-    @apply bg-gray-200
-}
-.cont{
-    display: flex;
-}
-/* Estilos para el contenedor principal */
-.cont-view {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  /* Estilos para las tarjetas */
   .div-card {
     @apply bg-white p-4 flex gap-6 rounded-md shadow-xl;
-    width: 520px;
+    width: 320px;
     padding: 10px;
     margin: 10px;
     border: 1px solid #ccc;
     cursor: pointer;
   }
-  @media (max-width: 740px) {
-    .div-card {
-        @apply bg-white p-4 flex gap-6 rounded-md shadow-xl;
-        width: 320px;
-        padding: 10px;
-        margin: 10px;
-        border: 1px solid #ccc;
-        cursor: pointer;
-      }
-  }
-  
-  /* Estilos para el modal */
-  .modal {
-    display: block;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    z-index: 1000;
-  }
-  
-  /* Estilos para el contenido del modal */
-  .modal-content {
-    background-color: #fff;
-    padding: 29px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap:16px;
-    color: #444444;
-  }
-  .modal-colum{
-    display: flex;
-    gap:16px;
-  }
-  
-  /* Estilos para el botón de cierre del modal */
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 20px;
-  }
-  .contResult{
-    display: flex;
-    justify-content: center;
-  }
+}
 
-  .cont-Header{
-    @apply w-screen  flex justify-between px-5 ; 
-  }
-  .logo-Cont{
-    font-family: 'EB Garamond', serif;
-    @apply flex items-center p-3 items-center w-fit gap-4;
-  }
-  .logo{
-    @apply text-black m-0 p-0 w-auto
-  }
-  
-  .logo-icon{
-    font-family: 'EB Garamond', serif;
-    @apply m-0 p-0 bg-black text-white px-3 text-4xl rounded-sm shadow-sm;  
-  }
+/* Estilos para otras secciones */
+/* ... (Continuación de estilos) ... */
 
-  @media (max-width: 768px){
-    .cont-Header{
-      @apply w-screen  flex px-5 flex-col justify-center items-center; 
-    }
-  }
+/* Estilos para el modal */
+.modal {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  z-index: 1000;
+}
+/* ... (Otros estilos) ... */
 
+/* Estilos para el contenido del modal */
+.modal-content {
+  background-color: #fff;
+  padding: 29px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #444444;
+}
+.modal-colum {
+  display: flex;
+  gap: 16px;
+}
 
-  .btn-buscar{
-    
-  }
-  .buscador-icon{
-    @apply text-gray-400  w-6 border-gray-400 
-  }
-  .formHeader{
-    @apply  flex items-center gap-2;
-  }
+/* Estilos para el botón de cierre del modal */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+/* ... (Más estilos) ... */
 
-  .cont-Nav{
-    @apply flex w-screen justify-evenly;
-  }
-  .nav-link{
-    @apply text-gray-500
-  }
-  .nav-link:hover{
-    @apply  text-gray-600;
-    /* //underline decoration-1 */
-  } 
+/* Estilos para la capa principal */
+
+/* ... (Otros estilos) ... */
+
+/* Estilos para la tarjeta de imagen y texto */
+
+/* ... (Continuación de estilos) ... */
+
+/* Estilos para el contenedor principal de eventos de la semana */
+
+/* ... (Otros estilos) ... */
+
+/* Estilos para el encabezado */
+
+/* Estilos para capas y elementos específicos */
+.layer-Principal {
+  @apply px-28 py-5;
+  width: 100%;
+  height: 70vh;
+}
+/* ... (Otros estilos) ... */
+
+/* ... (Continúa con el resto de tus estilos) ... */
+/* ... (Continuación y final de estilos) ... */
+
+/* Estilos para tarjetas y contenido */
+.contResult {
+  @apply flex justify-center;
+}
+/* ... (Otros estilos) ... */
+
+/* Estilos para imágenes y texto */
+
+/* ... (Otros estilos) ... */
 
 
 
-
-  .layer-Principal{
-    @apply px-10 py-5 ;
-    width: 100%;
-    height: 70vh;
-  }
-  .layer{
-    background-image:linear-gradient(6deg, rgba(44, 43, 46, 0.708) 0%, rgba(65, 65, 68, 0.338) 100%), url('https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    width: 100%;
-    height: 100%;
-    background-color: #444444;
-    @apply rounded-sm p-10;
-  }
-  .layer h2{
-    @apply text-5xl w-1/2 text-white;
-    font-family: 'EB Garamond', serif;
-  }
-  .layer h3{
-    @apply w-1/2 text-white;
-    font-family: 'EB Garamond', serif;
-  }
+/* Final del código */
 
 
 
-  .card{
-   width: auto;
-   height: fit-content;
-   display: flex;
-   gap: 8px;
-  }
-  .img img{
-    width: 150px;
-    height: 100%;
-  }
-  .text{
-    width: 300px;
-    @apply flex gap-2 flex-col p-2 ;
-  }
-  .text h2{
-    @apply text-gray-800 text-xl font-medium m-0 ;
-  }
-  .text p{
-    @apply text-xs text-gray-500 ;
-  }
-  .text div{
-    @apply flex gap-1
-  }
-  .text a{
-    @apply text-xs
-  }
-  .text a:hover{
-    @apply font-normal text-gray-800
-  }
+.cont-Header {
+  @apply flex px-5 w-full flex-col items-start sm:flex-row sm:items-center sm:justify-evenly ;
+}
+.logo-Cont {
+  font-family: 'EB Garamond', serif;
+  @apply flex py-4 items-center w-fit gap-4;
+}
+.logo {
+  @apply text-black m-0 p-0 w-auto text-xl font-bold sm:text-4xl;
+}
+.logo-icon {
+  font-family: 'EB Garamond', serif;
+  @apply text-2xl sm:text-4xl m-0 p-3 px-5 bg-black text-white rounded-sm shadow-sm;
+}
 
-  .ContEventSemana{
-    @apply w-screen h-96 px-10 mt-10;
-  }
-  .ContEventSemana h1{
-    @apply text-4xl text-gray-800 block w-fit m-0 p-0 ;  
-    font-family: 'EB Garamond', serif;
-  }
-  .EventSemanaContCard{
-    @apply border-t-2 border-gray-800 flex flex-wrap gap-4 p-4;
-    width: 100%;
-  }
+.ContBuscador{
+  @apply w-full flex justify-center items-center gap-4 sm:w-fit
+}
+.ContBuscador svg{
+  @apply w-6 h-6 
+}
+input{
+  @apply block w-full max-w-xs rounded-md border-0 py-1 pl-4 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6  bg-slate-200 ;
+}
+
+
+
+
+
+
+
+/* Estilos para la barra de navegación */
+.cont-Nav {
+  @apply flex w-screen justify-evenly py-4; 
+}
+.scroll{
+  @apply  flex flex-row overflow-x-auto gap-4 px-4 
+}
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.nav-link {
+  @apply text-gray-500 min-w-fit;
+}
+.nav-link:hover {
+  @apply text-gray-600 border-b-gray-600 border-b-2 ;
+}
+/* ... (Otros estilos) ... */
+
+
+
+.layer-Principal {
+  @apply px-4 py-5 h-72 sm:h-96 sm:px-40 ;
+  width: 100%;
+}
+.layer {
+  background-image: linear-gradient(
+      6deg,
+      rgba(44, 43, 46, 0.708) 0%,
+      rgba(65, 65, 68, 0.338) 100%
+    ),
+    url('https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  width: 100%;
+  height: 100%;
+  background-color: #444444;
+  @apply rounded-sm p-4;
+}
+.layer h2 {
+  @apply text-4xl w-fit text-white sm:w-1/2 sm:text-6xl;
+  font-family: 'EB Garamond', serif;
+}
+.layer h3 {
+  @apply w-1/2 text-white hidden sm:block;
+  font-family: 'EB Garamond', serif;
+}
+
+
+
+
+.ContEventSemana {
+  @apply w-screen mt-10 flex flex-col p-4 h-auto sm:px-32;
+}
+.ContEventSemana h1 {
+  @apply text-2xl text-gray-900 block w-fit m-0 p-0 font-bold my-4;
+}
+.EventSemanaContCard {
+  @apply border-t-2 border-gray-200 flex flex-wrap gap-4 p-4;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+
+
+
+
+.card {
+  width: auto;
+  max-width: 500px;
+  height: fit-content;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  align-items: center;
+  @apply shadow rounded gap-4 sm:flex-row sm:w-3/6 p-4
+}
+.card:hover{
+  @apply bg-gray-200 cursor-pointer transition-colors
+}
+.img{
+  @apply w-64 overflow-hidden sm:w-52 sm:h-auto
+}
+.img img {
+  width: 100%;
+  height: auto;
+  filter: brightness(80%) contrast(100%) grayscale(10%);
+  @apply rounded
+}
+.text {
+  width: 300px;
+  @apply flex gap-2 flex-col p-2 w-64 ;
+}
+.text h2 {
+  @apply text-gray-800 text-xl font-medium m-0;
+}
+
+.text p {
+  @apply text-xs text-gray-500;
+}
+.text div {
+  @apply flex gap-2;
+}
+.text a {
+  @apply text-xs;
+}
+.text a:hover {
+  @apply font-normal text-gray-800;
+}

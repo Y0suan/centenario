@@ -4,6 +4,7 @@ import React from 'react'
 const Nav = () => {
   return (
     <div class='cont-Nav'>
+        <div className='scroll scrollbar-hidden'>
             <Link href={'/'} class='nav-link'>
                 Sec. de Gobierno
             </Link>
@@ -22,7 +23,7 @@ const Nav = () => {
             <Link href={'/'} class='nav-link'>
                 Sec. de Accion Social
             </Link>
-
+        </div>    
     </div>
   )
 }
