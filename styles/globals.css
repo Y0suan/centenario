@@ -252,7 +252,13 @@ input{
   @apply bg-gray-200 cursor-pointer transition-colors
 }
 .img{
-  @apply w-64 overflow-hidden sm:w-52 sm:h-auto
+  position: relative;
+  @apply w-64 overflow-hidden sm:w-52 sm:h-auto 
+}
+.img .Link{
+  z-index: 1;
+  position: absolute;
+  @apply text-xl text-white p-2
 }
 .img img {
   width: 100%;
