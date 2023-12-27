@@ -22,7 +22,7 @@ export const ContEventSemana = () => {
       <h1>Eventos de La Semana</h1>
       <div className='EventSemanaContCard'>
         {Array.isArray(products) && products.length > 0 ? (
-          products.map(product => (
+          products.slice().reverse().map(product => (
             <CardChica key={product.id} produc={product} />
           ))
         ) : (
@@ -30,5 +30,5 @@ export const ContEventSemana = () => {
         )}
       </div>
     </div>
-  );  
+  );
 };

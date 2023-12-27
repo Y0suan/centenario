@@ -1,44 +1,37 @@
 import Center from '@/Component/Center'
 import Header from '@/Component/Header'
+import Nav from '@/Component/Nav'
 import { mongooseConnect } from '@/lib/mongoose'
 import { Product } from '@/models/Product'
 import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
+import { google, outlook, office365, yahoo, ics } from "calendar-link";
+import { SiGooglecalendar } from "react-icons/si";
 
 
-
-import { FaFacebookF } from 'react-icons/fa';
-import { FaInstagram } from 'react-icons/fa';
-import { FaMapMarkerAlt } from 'react-icons/fa';
 
 
 const Title = styled.h1`
-margin: 0px;
-margin-top:16px;
-font-size: 26px;
-line-height: 30px;
-font-weight: 600;
-color: #222222;
 `
 
 const Subtitle = styled.h2`
-margin: 0px;
+/* margin: 0px;
 margin-top:16px;
 font-size: 26px;
 line-height: 30px;
 font-weight: 600;
-color: #222222;
+color: #222222; */
 `
 const Img = styled.div`
-width: 100%;
+/* width: 100%;
 max-height:60vh ;
 overflow: hidden;
 border-radius: 8px;
 img{
   width: 100%;
 
-}
+} */
 `
 const LinkSubtitle = styled(Link)`
 margin: 0px;
@@ -81,12 +74,12 @@ color:#2563EB;
 }
 `
 const Description = styled.div`
-padding:26px 0px;
+/* padding:26px 0px;
 width: 100%;
-border-bottom: 1px solid #CFC9D1;
+border-bottom: 1px solid #CFC9D1; */
 `
 const Galery = styled.div`
-overflow: hidden; 
+/* overflow: hidden; 
 overflow-x: scroll;
 padding:26px 0px;
 width: 100%;
@@ -100,38 +93,37 @@ img{
   justify-content:center;
   align-items:center;
   flex:1;
-}
+} */
 `
 
 const ProductPage = ({product}) => {
+  const event = {
+    title: product.title,
+    description: product.description,
+    start: product.fecha,
+    duration: [3, "hour"],
+  };
   return (
     <>
     <Header/>
-    <Center>
-      <Img>
+    <Nav/>
+    
+      <div className='productPage'>  
+      <Img className='imgProduct'>
       <img src={product.images?.[0]} ></img>
       </Img>
-      <Title>{product.title}</Title>
-      <LinkSubtitle href={product.hubicacion}>Visitanos<FaMapMarkerAlt/></LinkSubtitle>
-       <LinksInportantes>
-      
-          <Links href={product.facebook}><FaFacebookF className='icon'/> visita Facebook</Links>
-          <Links href={product.instagram}><FaInstagram className='icon' /> comparte con nosotros </Links>
-          <Links href={product.hubicacion}><FaMapMarkerAlt className='icon' /> aprende como llegar</Links>
-        
-       </LinksInportantes>
-       <Description>
-        <Subtitle>Descripcion</Subtitle>
+      <Description className='productInfo' >
+      <h1>{product.title}</h1>
+        <h2>Descripcion</h2>
         <p>
           {product.description}
         </p>
+       <Link  href={google(event)} target='_blank' className='link' >
+        <SiGooglecalendar/>  Sumalo a tu calendario
+        </Link>
        </Description>
-       <Galery>
-       {product.images?.map((image, index) => (
-       <img key={index} src={image} alt={`Image ${index}`} />
-       ))}
-       </Galery>
-    </Center> 
+       </div>
+   
     </>
   )
 }

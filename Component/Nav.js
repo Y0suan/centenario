@@ -5,22 +5,22 @@ const Nav = () => {
   return (
     <div class='cont-Nav'>
         <div className='scroll scrollbar-hidden'>
-            <Link href={'/'} class='nav-link'>
+            <Link href={'/secDeGobierno'} class='nav-link'>
                 Sec. de Gobierno
             </Link>
-            <Link href={'/'} class='nav-link'>
+            <Link href={'/seDeHacienda'} class='nav-link'>
                 Sec. de Hacienda
             </Link>
-            <Link href={'/'} class='nav-link'>
+            <Link href={'/secDeObrasPublicas'} class='nav-link'>
                 Sec. de Obras Publicas
             </Link>
-            <Link href={'/'} class='nav-link'>
+            <Link href={'/secDeAmbiente'} class='nav-link'>
                 Sec. de Ambiente
             </Link>
-            <Link href={'/'} class='nav-link'>
+            <Link href={'/seDeProduccion'} class='nav-link'>
                 Sec. de Produccion
             </Link>
-            <Link href={'/'} class='nav-link'>
+            <Link href={'/secDeAccion'} class='nav-link'>
                 Sec. de Accion Social
             </Link>
         </div>    

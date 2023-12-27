@@ -13,34 +13,35 @@ export const CardChica = ({ produc }) => {
   };
 
   const event = {
-    title: (produc.title),
-    description: (produc.description),
-    start: (produc.fecha),
+    title: produc.title,
+    description: produc.description,
+    start: produc.fecha,
     duration: [3, "hour"],
   };
   
+  const url = '/product/' + produc._id ;
 
   return (
-    <div key={produc._id} className='card'> {/* Es className, no class */}
-      <div className='img'>
-        <Link href={google(event)} target='blank' className='Link' >
-          <SiGooglecalendar />
-        </Link>
-        {/* Mostrar solo la primera imagen si existen imágenes */}
-        {produc.images.length > 0 && (
-          <img src={produc.images[0]} alt='Product' /> 
-        )}
-      </div>
-      <div className='text'>
-        <h2>{produc.title}</h2>
-        <p>{truncateDescription(produc.description)}</p> {/* Mostrar la descripción truncada */}
-        <div>
-          <p>{produc.fecha}</p>
-          <a href='/'>Sec. de Gobierno</a>
-
+    <Link href={url} passHref className='card'>
+      
+        <div className='img'>
+          <Link href={google(event)} target='_blank' className='Link' >
+            <SiGooglecalendar />
+          </Link>
+          {/* Mostrar solo la primera imagen si existen imágenes */}
+          {produc.images.length > 0 && (
+            <img src={produc.images[0]} alt='Product' /> 
+          )}
         </div>
-      </div>
-    </div>
+        <div className='text'>
+          <h2>{produc.title}</h2>
+          <p>{truncateDescription(produc.description)}</p> 
+          <div>
+            <p>{produc.fecha}</p>
+            <a href='/'>Sec. de Gobierno</a>
+          </div>
+        </div>
+
+    </Link>
   );
 };
-

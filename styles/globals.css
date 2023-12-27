@@ -174,7 +174,7 @@ input{
   @apply flex w-screen justify-evenly py-4; 
 }
 .scroll{
-  @apply  flex flex-row overflow-x-auto gap-4 px-4 
+  @apply  flex flex-row overflow-x-auto gap-4 px-4 ;
 }
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
@@ -185,7 +185,7 @@ input{
 }
 
 .nav-link {
-  @apply text-gray-500 min-w-fit;
+  @apply text-gray-500 min-w-fit border-b-white border-b-2 ;
 }
 .nav-link:hover {
   @apply text-gray-600 border-b-gray-600 border-b-2 ;
@@ -285,4 +285,35 @@ input{
 }
 .text a:hover {
   @apply font-normal text-gray-800;
+}
+
+
+
+
+.productPage{
+  @apply w-screen sm:justify-center flex flex-col sm:flex-row p-4 items-center
+}
+.imgProduct{
+  @apply sm:w-4/12 w-screen p-4 rounded-sm 
+}
+.imgProduct img{
+  @apply rounded-sm 
+}
+.productInfo{
+  @apply sm:w-4/12 flex  flex-col gap-4 p-4 
+}
+
+.productInfo h1{
+  @apply text-gray-900 text-start w-fit m-0 p-0 
+}
+.productInfo h2{
+  @apply text-2xl text-gray-900 block w-fit m-0 p-0 font-normal
+}
+.productInfo .link{
+  @apply flex gap-2 items-center bg-blue-400 w-fit p-4 rounded-sm font-bold text-white
+}
+
+
+.footer{
+  @apply w-screen h-56 bg-slate-600
 }
