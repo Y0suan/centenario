@@ -15,7 +15,7 @@ export default function HomePage(){
   return(
     <div class="body">
       <Header></Header>
-      {/* <Nav></Nav> */}
+      <Nav></Nav>
       <LayerPrincipal/>
       <ContEventSemana/>
       {/* <EventVistaGrande/> */}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import Link from 'next/link';
 
 
 
@@ -10,10 +11,10 @@ const Header = () => {
 
   return (
     <div className='cont-Header'>
-    <div className='logo-Cont'>
+    <Link href={'/'} className='logo-Cont'>
       <p className='logo-icon'>A</p>
       <h1 className='logo' >Agenda Municipal Eldorado</h1>
-    </div>
+    </Link>
     <form class='ContBuscador'>        
       <input
           type="text"

@@ -4,8 +4,8 @@ import { google, outlook, office365, yahoo, ics } from "calendar-link";
 import Link from 'next/link';
 import { SiGooglecalendar } from "react-icons/si";
 
-export const CardChica = ({ produc }) => {
-  // Función para limitar la descripción a un máximo de 20 palabras
+const CardXl = ({produc}) => {
+      // Función para limitar la descripción a un máximo de 20 palabras
   const truncateDescription = (description) => {
     const words = description.split(' ');
     const truncated = words.slice(0, 20).join(' ');
@@ -22,9 +22,9 @@ export const CardChica = ({ produc }) => {
   const url = '/product/' + produc._id ;
 
   return (
-    <Link href={url} passHref className='card'>
+    <Link href={url} passHref className='cardXl'>
       
-        <div className='img'>
+        <div className='imgXl'>
           <Link href={google(event)} target='_blank' className='Link' >
             <SiGooglecalendar />
           </Link>
@@ -33,7 +33,7 @@ export const CardChica = ({ produc }) => {
             <img src={produc.images[0]} alt='Product' /> 
           )}
         </div>
-        <div className='text'>
+        <div className='textXl'>
           <h2>{produc.title}</h2>
           <p>{truncateDescription(produc.description)}</p> 
           <div>
@@ -45,5 +45,7 @@ export const CardChica = ({ produc }) => {
         </div>
 
     </Link>
-  );
-};
+  )
+}
+
+export default CardXl
