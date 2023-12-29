@@ -11,7 +11,7 @@ const SecDeGobierno = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get("/api/secDeGob");
-        setProducts(response.data); // Guarda los datos de la respuesta, no toda la respuesta
+        setProducts(response.data);
       } catch (error) {
         console.error("Error al recuperar los productos:", error);
       }
@@ -19,13 +19,10 @@ const SecDeGobierno = () => {
     fetchProducts();
   }, []);
 
-  // Función para filtrar los productos
   const filterProductsByCategory = (categoryName) => {
     const filteredProducts = products.filter(product => product.category.parent === categoryName);
     return filteredProducts;
   };
-
-  // Filtrar los productos por una categoría específica en la propiedad 'parent' de la categoría
   const filteredProducts = filterProductsByCategory('656db17db237aa95e172dc61');
 
   return (

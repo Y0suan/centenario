@@ -4,14 +4,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'; 
 import CardXl from '@/Component/CardXl';
 
-const seDeHacienda = () => {
+const SeDeHacienda = () => {
   const [products, setProducts] = useState([]);
   
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get("/api/secDeGob");
-        setProducts(response.data); // Guarda los datos de la respuesta, no toda la respuesta
+        setProducts(response.data);
       } catch (error) {
         console.error("Error al recuperar los productos:", error);
       }
@@ -19,13 +19,10 @@ const seDeHacienda = () => {
     fetchProducts();
   }, []);
 
-  // Función para filtrar los productos
   const filterProductsByCategory = (categoryName) => {
     const filteredProducts = products.filter(product => product.category.parent === categoryName);
     return filteredProducts;
   };
-
-  // Filtrar los productos por una categoría específica en la propiedad 'parent' de la categoría
   const filteredProducts = filterProductsByCategory('656db18bb237aa95e172dc68');
   return (
     <div>
@@ -56,4 +53,4 @@ const seDeHacienda = () => {
   )
 }
 
-export default seDeHacienda
+export default SeDeHacienda

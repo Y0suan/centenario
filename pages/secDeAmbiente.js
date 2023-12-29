@@ -5,14 +5,14 @@ import axios from 'axios';
 import CardXl from '@/Component/CardXl';
 
 
-const secDeAmbiente = () => {
+const SecDeAmbiente = () => {
   const [products, setProducts] = useState([]);
   
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get("/api/secDeGob");
-        setProducts(response.data); // Guarda los datos de la respuesta, no toda la respuesta
+        setProducts(response.data);
       } catch (error) {
         console.error("Error al recuperar los productos:", error);
       }
@@ -20,13 +20,10 @@ const secDeAmbiente = () => {
     fetchProducts();
   }, []);
 
-  // Función para filtrar los productos
   const filterProductsByCategory = (categoryName) => {
     const filteredProducts = products.filter(product => product.category.parent === categoryName);
     return filteredProducts;
   };
-
-  // Filtrar los productos por una categoría específica en la propiedad 'parent' de la categoría
   const filteredProducts = filterProductsByCategory('656db1b1b237aa95e172dc76');
   return (
     <div>
@@ -58,4 +55,4 @@ const secDeAmbiente = () => {
   )
 }
 
-export default secDeAmbiente
+export default SecDeAmbiente
