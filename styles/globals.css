@@ -490,7 +490,7 @@ height: 100%;
 
 
 .CardListCont{
-@apply flex  flex-col sm:w-96 w-fit items-center
+@apply flex  flex-col sm:w-96 w-fit items-center gap-2
 }
 .cardMini {
   max-width: fit-content;
@@ -498,7 +498,7 @@ height: 100%;
   display: flex;
   gap: 8px;
   align-items: center;
-  @apply shadow rounded gap-4 w-screen sm:w-4/6 p-4 flex-col sm:min-w-[400px] sm:flex-row
+  @apply sm:shadow rounded gap-4 w-screen sm:w-4/6 p-4 flex-col sm:min-w-[400px] sm:flex-row
 }
 .cardMini:hover{
   @apply bg-gray-200 cursor-pointer transition-colors
