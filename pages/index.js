@@ -6,6 +6,7 @@ import Footer from "@/Component/Footer";
 import Header from "@/Component/Header";
 import LayerPrincipal from "@/Component/LayerPrincipal";
 import Nav from "@/Component/Nav";
+import NuevoHome from "@/Component/NuevoHome";
 
 
 export default function HomePage(){

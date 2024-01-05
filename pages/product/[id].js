@@ -8,6 +8,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { google, outlook, office365, yahoo, ics } from "calendar-link";
 import { SiGooglecalendar } from "react-icons/si";
+import CompartirWhatsApp from '@/Component/Botones/CompartirWhatsApp '
+import CardList from '@/Component/CardList/CardList'
 
 
 
@@ -104,10 +106,10 @@ const ProductPage = ({product}) => {
     duration: [3, "hour"],
   };
   return (
-    <>
+    <div>
     <Header/>
     <Nav/>
-    
+    <div className='ContProductPage'  >
       <div className='productPage'>  
       <Img className='imgProduct'>
       <img src={product.images?.[0]} ></img>
@@ -118,13 +120,17 @@ const ProductPage = ({product}) => {
         <p>
           {product.description}
         </p>
+        <div className='ContBtn' >
        <Link  href={google(event)} target='_blank' className='link' >
         <SiGooglecalendar/>  Sumalo a tu calendario
         </Link>
+        <CompartirWhatsApp titulo={product.title} imagen={product.images?.[0]} />
+        </div>
        </Description>
        </div>
-   
-    </>
+    <CardList/>
+    </div>
+    </div>
   )
 }
 
