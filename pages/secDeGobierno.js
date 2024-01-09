@@ -3,6 +3,8 @@ import Nav from '@/Component/Nav';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; 
 import CardXl from '@/Component/CardXl';
+import MediumCard from '@/Component/Card/MediumCard';
+import EspacioPublicitario from '@/Component/EspacioPublicitario';
 
 const SecDeGobierno = () => {
   const [products, setProducts] = useState([]);
@@ -44,12 +46,13 @@ const SecDeGobierno = () => {
       <div className='ConSecretaria'>
         {Array.isArray(filteredProducts) && filteredProducts.length > 0 ? (
           filteredProducts.slice().reverse().map(product => (
-            <CardXl key={product.id} produc={product} />
+            <MediumCard key={product.id} produc={product} />
           ))
         ) : (
           <p>No hay Eventos disponibles</p>
         )}
       </div>
+      <EspacioPublicitario/>
     </div>
   )
 }

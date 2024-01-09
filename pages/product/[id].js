@@ -10,6 +10,9 @@ import { google, outlook, office365, yahoo, ics } from "calendar-link";
 import { SiGooglecalendar } from "react-icons/si";
 import CompartirWhatsApp from '@/Component/Botones/CompartirWhatsApp '
 import CardList from '@/Component/CardList/CardList'
+import CompartirWpp from '@/Component/Botones/Compartir'
+import ShareByEmailButton from '@/Component/Botones/ShareByEmailButton'
+import EspacioPublicitario from '@/Component/EspacioPublicitario'
 
 
 
@@ -111,25 +114,36 @@ const ProductPage = ({product}) => {
     <Nav/>
     <div className='ContProductPage'  >
       <div className='productPage'>  
+      <div className='ProductPageHeader'>
+     <div>
       <Img className='imgProduct'>
       <img src={product.images?.[0]} ></img>
       </Img>
+     </div>
+     <div className='ProductPageHeaderText' >
+     <h3>{product.fecha}</h3>
+     <h2 className='tituloPrincipalArticulo' >{product.title}</h2>
+      <h3>{product.hubicacion}</h3>
+      <div className='ProductPageHeaderTextBtn'>
+        <CompartirWpp/>
+        <ShareByEmailButton/>
+        <Link href={google(event)} target='_blank' className='btnCalendarFa' >
+            <SiGooglecalendar />
+          </Link>
+        </div>
+     </div>
+
+
+      </div>
       <Description className='productInfo' >
-      <h1>{product.title}</h1>
         <h2>Descripcion</h2>
         <p>
           {product.description}
         </p>
-        <div className='ContBtn' >
-       <Link  href={google(event)} target='_blank' className='link' >
-        <SiGooglecalendar/>  Sumalo a tu calendario
-        </Link>
-        <CompartirWhatsApp titulo={product.title} imagen={product.images?.[0]} />
-        </div>
        </Description>
        </div>
-    <CardList/>
     </div>
+    <EspacioPublicitario/>
     </div>
   )
 }
