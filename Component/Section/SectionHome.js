@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import BigCard from '../Card/BigCard';
 import MiniCardRow from '../Card/MiniCardRow';
+import BigCardLoader from '../Card/BigCardLoader';
 
 const SectionHome = () => {
   const [products, setProducts] = useState([]);
@@ -33,7 +34,7 @@ const SectionHome = () => {
         {latestProduct ? (
           <BigCard key={latestProduct.id} product={latestProduct} />
         ) : (
-          <p>No hay Eventos disponibles</p>
+          <BigCardLoader/>
         )}
       </div>
       <div className='SectionHomeMini'>

@@ -5,6 +5,7 @@ import axios from 'axios';
 import CardXl from '@/Component/CardXl';
 import MediumCard from '@/Component/Card/MediumCard';
 import EspacioPublicitario from '@/Component/EspacioPublicitario';
+import Layout from '@/Component/Layoud';
 
 const SecDeGobierno = () => {
   const [products, setProducts] = useState([]);
@@ -28,9 +29,7 @@ const SecDeGobierno = () => {
   const filteredProducts = filterProductsByCategory('656db17db237aa95e172dc61');
 
   return (
-    <div>
-      <Header />
-      <Nav />
+    <Layout>
       <div class='ContSec'>
         <div class='Cont' >
         <div class='img'>
@@ -52,8 +51,7 @@ const SecDeGobierno = () => {
           <p>No hay Eventos disponibles</p>
         )}
       </div>
-      <EspacioPublicitario/>
-    </div>
+    </Layout>
   )
 }
 

@@ -5,6 +5,7 @@ import axios from 'axios';
 import CardXl from '@/Component/CardXl';
 import MediumCard from '@/Component/Card/MediumCard';
 import EspacioPublicitario from '@/Component/EspacioPublicitario';
+import Layout from '@/Component/Layoud';
 
 const SecDeAmbiente = () => {
   const [products, setProducts] = useState([]);
@@ -24,9 +25,7 @@ const SecDeAmbiente = () => {
   const filteredProducts = products.filter(product => product.category.parent === '656db1b1b237aa95e172dc76' || product.category === '656db1b1b237aa95e172dc76');
 
   return (
-    <div>
-      <Header/>
-      <Nav/>
+    <Layout>
       <div className='ContSec'>
         <div className='Cont' >
           <div className='img'>
@@ -44,8 +43,7 @@ const SecDeAmbiente = () => {
           <p>No hay Eventos disponibles</p>
         )}
       </div>
-      <EspacioPublicitario/>
-    </div>
+    </Layout>
   );
 };
 

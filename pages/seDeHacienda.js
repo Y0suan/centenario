@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'; 
 import CardXl from '@/Component/CardXl';
 import MediumCard from '@/Component/Card/MediumCard';
+import Layout from '@/Component/Layoud';
 
 const SeDeHacienda = () => {
   const [products, setProducts] = useState([]);
@@ -26,9 +27,7 @@ const SeDeHacienda = () => {
   };
   const filteredProducts = filterProductsByCategory('656db18bb237aa95e172dc68');
   return (
-    <div>
-    <Header/>
-    <Nav/>
+    <Layout>
     <div class='ContSec'>
       <div class='Cont' >
       <div class='img'>
@@ -50,7 +49,7 @@ const SeDeHacienda = () => {
         <p>No hay Eventos disponibles</p>
       )}
     </div>
-  </div>
+  </Layout>
   )
 }
 

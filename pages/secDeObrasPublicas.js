@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'; 
 import CardXl from '@/Component/CardXl';
 import MediumCard from '@/Component/Card/MediumCard';
+import Layout from '@/Component/Layoud';
 
 const SecDeObrasPublicas = () => {
   const [products, setProducts] = useState([]);
@@ -28,9 +29,7 @@ const SecDeObrasPublicas = () => {
   const filteredProducts = filterProductsByCategory('656db199b237aa95e172dc6f');
 
   return (
-      <div>
-      <Header/>
-      <Nav/>
+      <Layout>
       <div class='ContSec'>
         <div class='Cont' >
         <div class='img'>
@@ -52,7 +51,7 @@ const SecDeObrasPublicas = () => {
           <p>No hay Eventos disponibles</p>
         )}
       </div>
-    </div>
+    </Layout>
   )
 }
 
