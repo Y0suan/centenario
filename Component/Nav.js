@@ -18,10 +18,10 @@ const Nav = () => {
                 Sec. de Ambiente
             </Link>
             <Link href={'/seDeProduccion'} class='nav-link'>
-                Sec. de Produccion
+                Sec. de Producción
             </Link>
             <Link href={'/secDeAccion'} class='nav-link'>
-                Sec. de Accion Social
+                Sec. de Acción Social
             </Link>
         </div>    
     </div>
