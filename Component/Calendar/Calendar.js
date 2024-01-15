@@ -72,17 +72,17 @@ const EventPoint = ({ event }) => {
   return (
     <div>
       <a href="#" onClick={showDetails ? handleHideDetailsClick : handleShowMoreClick}>
-        <div style={{ backgroundColor: randomColor, width: '10px', height: '10px', borderRadius: '50%' }} />
-        <h4>{showDetails ? 'Cerrar' : 'Ver más'}</h4>
+        {/* <div style={{ backgroundColor: randomColor, width: '10px', height: '10px', borderRadius: '50%' }} /> */}
+        <h4 className='btnCalendar' style={{ backgroundColor: randomColor}} >{showDetails ? 'Cerrar' : 'Ver mas'}</h4>
       </a>
       {showDetails && (
         <div>
-          <p>Detalles del evento:</p>
+          {/* <p>Detalles del evento:</p>
           <ul>
             <li>Fecha: {moment(event.start).format('LL')}</li>
             <li>Hora: {moment(event.start).format('LT')}</li>
             <li>Descripción: {event.description}</li>
-          </ul>
+          </ul> */}
         </div>
       )}
     </div>
