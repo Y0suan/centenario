@@ -13,7 +13,7 @@ import CardList from '@/Component/CardList/CardList'
 import CompartirWpp from '@/Component/Botones/Compartir'
 import ShareByEmailButton from '@/Component/Botones/ShareByEmailButton'
 import EspacioPublicitario from '@/Component/EspacioPublicitario'
-
+import { FaMapMarkedAlt } from "react-icons/fa";
 
 
 
@@ -123,12 +123,15 @@ const ProductPage = ({product}) => {
      <div className='ProductPageHeaderText' >
      <h3>{product.fecha}</h3>
      <h2 className='tituloPrincipalArticulo' >{product.title}</h2>
-      <h3>{product.hubicacion}</h3>
+
       <div className='ProductPageHeaderTextBtn'>
         <CompartirWpp/>
         <ShareByEmailButton/>
         <Link href={google(event)} target='_blank' className='btnCalendarFa' >
             <SiGooglecalendar />
+          </Link>
+          <Link href={product.hubicacion}  target='_blank' className='BtnWppFa bg-greenMuni' >
+            <FaMapMarkedAlt/>
           </Link>
         </div>
      </div>
