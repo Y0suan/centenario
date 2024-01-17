@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { initGA, logPageView, GA_MEASUREMENT_ID } from '../utils/analytics';
 import { createGlobalStyle } from 'styled-components';
 import '@/styles/globals.css';
+import GoogleAnalytics from '@bradgarropy/next-google-analytics/dist/types/components/GoogleAnalytics';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -15,15 +15,12 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    initGA();
-    logPageView();
-  }, []);
 
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} />
+      <GoogleAnalytics measurementId='G-H0EHX8H1FP'/>
+      <Component {...pageProps} ></Component>
     </>
   );
 }
