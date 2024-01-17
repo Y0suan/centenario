@@ -1,3 +1,4 @@
+import LoaderCard from '@/Component/Card/LoaderCard';
 import Layout from '@/Component/Layoud';
 import Loader from '@/Component/Loader';
 import React, { useEffect, lazy, Suspense } from 'react';

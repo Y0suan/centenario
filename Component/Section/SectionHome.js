@@ -4,6 +4,7 @@ import axios from 'axios';
 import BigCard from '../Card/BigCard';
 import MiniCardRow from '../Card/MiniCardRow';
 import BigCardLoader from '../Card/BigCardLoader';
+import Loader from '../Loader';
 
 const SectionHome = () => {
   const [products, setProducts] = useState([]);
@@ -34,7 +35,7 @@ const SectionHome = () => {
         {latestProduct ? (
           <BigCard key={latestProduct.id} product={latestProduct} />
         ) : (
-          <BigCardLoader/>
+          <Loader/>
         )}
       </div>
       <div className='SectionHomeMini'>
@@ -43,7 +44,7 @@ const SectionHome = () => {
             <MiniCardRow key={product.id} product={product} />
           ))
         ) : (
-          <p>No hay Eventos disponibles</p>
+          <Loader/>
         )}
       </div>
     </div>

@@ -12,7 +12,7 @@ const Nav = () => {
                 Sec. de Hacienda
             </Link>
             <Link href={'/secDeObrasPublicas'} class='nav-link'>
-                Sec. de Obras Publicas
+                Sec. de Obras Públicas
             </Link>
             <Link href={'/secDeAmbiente'} class='nav-link'>
                 Sec. de Ambiente

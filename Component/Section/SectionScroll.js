@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import MediumCard from '../Card/MediumCard';
+import Loader from '../Loader';
 
 const SectionScroll = () => {
   const [products, setProducts] = useState([]);
@@ -34,7 +35,7 @@ const SectionScroll = () => {
             <MediumCard key={product.id} produc={product} />
           ))
         ) : (
-          <p>No hay Eventos disponibles</p>
+          <Loader/>
         )}
     </div>
     </div>
