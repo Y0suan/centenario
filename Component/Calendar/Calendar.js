@@ -114,10 +114,11 @@ const CalendarPage = () => {
   const events = products.map(product => ({
     id: product._id,
     title: product.title,
-    start: new Date(product.fecha),
-    end: new Date(product.fecha),
+    start: moment(product.fecha).toDate(),  // Convierte a Date en la zona horaria del cliente
+    end: moment(product.fecha).toDate(),    // Convierte a Date en la zona horaria del cliente
     description: product.description,
   }));
+  
 
   return (
     <div style={calendarStyles.container} className='calendario'>
