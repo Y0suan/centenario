@@ -100,66 +100,92 @@ img{
   flex:1;
 } */
 `
+// Importaciones omitidas para mayor claridad
+import EventSchema from '@/Component/EventSchema';
 
-const ProductPage = ({product}) => {
+const ProductPage = ({ product }) => {
+  const isoDate = new Date(product.fecha).toISOString();
+  const url = '/product/' + product._id ;
+
   const event = {
-    title: product.title,
-    description: product.description,
-    start: product.fecha,
-    duration: [3, "hour"],
+    "@context": "http://schema.org",
+    "@type": "Event",
+    "name": product.title,
+    "description": product.description,
+    "startDate": isoDate , // Asegúrate de que la fecha esté en formato ISO 8601
+    "location": {
+      "@type": "Place",
+      "name": product.hubicacion, // Puedes personalizar esto según tu caso
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Eldorado",
+        "addressRegion": "Región",
+        "postalCode": "3380",
+        "streetAddress": "Dirección"
+      }
+    },
+    "url": url , // Reemplaza con la URL real del evento
+    "image": [
+      product.images[0],
+      // ... Agrega todas las imágenes relevantes
+    ],
   };
+
+
+
   return (
     <div>
-    <Header/>
-    <Nav/>
-    <div className='ContProductPage'  >
-      <div className='productPage'>  
-      <div className='ProductPageHeader'>
-     <div>
-      <Img className='imgProduct'>
-      <img src={product.images?.[0]} ></img>
-      </Img>
-     </div>
-     <div className='ProductPageHeaderText' >
-     <h3>{product.fecha}</h3>
-     <h2 className='tituloPrincipalArticulo' >{product.title}</h2>
+      <Header />
+      <Nav />
+      <div className='ContProductPage'>
+        <div className='productPage'>
+          <div className='ProductPageHeader'>
+            <div>
+              <Img className='imgProduct'>
+                <img src={product.images?.[0]} alt={product.title} />
+              </Img>
+            </div>
+            <div className='ProductPageHeaderText'>
+              <h3>{product.fecha}</h3>
+              <h2 className='tituloPrincipalArticulo'>{product.title}</h2>
 
-      <div className='ProductPageHeaderTextBtn'>
-        <CompartirWpp/>
-        <ShareByEmailButton/>
-        <Link href={google(event)} target='_blank' className='btnCalendarFa' >
-            <SiGooglecalendar />
-          </Link>
-          <Link href={product.hubicacion}  target='_blank' className='BtnWppFa bg-greenMuni' >
-            <FaMapMarkedAlt/>
-          </Link>
+              <div className='ProductPageHeaderTextBtn'>
+                <CompartirWpp />
+                <ShareByEmailButton />
+                {/* Enlace para Google Calendar */}
+                <Link href={google(event)} target='_blank' className='btnCalendarFa'>
+                  <SiGooglecalendar />
+                </Link>
+                {/* Enlace para la ubicación del evento */}
+                <Link href={product.hubicacion} target='_blank' className='BtnWppFa bg-greenMuni'>
+                  <FaMapMarkedAlt />
+                </Link>
+              </div>
+            </div>
+          </div>
+          <Description className='productInfo'>
+            <h2>Descripcion</h2>
+            <p>{product.description}</p>
+          </Description>
         </div>
-     </div>
-
-
       </div>
-      <Description className='productInfo' >
-        <h2>Descripcion</h2>
-        <p>
-          {product.description}
-        </p>
-       </Description>
-       </div>
+      <EspacioPublicitario />
+      {/* Renderizar el componente EventSchema con la información del evento */}
+      <EventSchema event={event} />
     </div>
-    <EspacioPublicitario/>
-    </div>
-  )
-}
+  );
+};
 
-export default ProductPage
+export default ProductPage;
 
 export async function getServerSideProps(context) {
   await mongooseConnect();
-  const {id} = context.query;
+  const { id } = context.query;
   const product = await Product.findById(id);
+
   return {
     props: {
       product: JSON.parse(JSON.stringify(product)),
-    }
-  }
+    },
+  };
 }
