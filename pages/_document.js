@@ -7,6 +7,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta name="google-site-verification" content="VfcxyWQjJ-6aLoh-09DoFMV8KnqCuYEpakvIEMN4Xdk" />
+          <meta name="google-site-verification" content="_HRbIym6NYPmySCRduApERDi1GYEmHfdHoLUz5yAK_M" />
         </Head>
         <body>
           <Main />
