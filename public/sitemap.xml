@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://agenda-eldorado2023.vercel.app/</loc>
+	<lastmod>2024-01-23T12:07:57+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://agenda-eldorado2023.vercel.app/secretaria-gobierno-eventos</loc>
+	<lastmod>2024-01-23T12:07:57+01:00</lastmod>
+	<priority>0.2</priority>
+</url>
+<url>
+	<loc>https://agenda-eldorado2023.vercel.app/secretaria-hacienda-eventos</loc>
+	<lastmod>2024-01-23T12:07:57+01:00</lastmod>
+	<priority>0.2</priority>
+</url>
+<url>
+	<loc>https://agenda-eldorado2023.vercel.app/secretaria-obras-publicas-eventos</loc>
+	<lastmod>2024-01-23T12:07:57+01:00</lastmod>
+	<priority>0.2</priority>
+</url>
+<url>
+	<loc>https://agenda-eldorado2023.vercel.app/secretaria-ambiente-eventos</loc>
+	<lastmod>2024-01-23T12:07:57+01:00</lastmod>
+	<priority>0.2</priority>
+</url>
+<url>
+	<loc>https://agenda-eldorado2023.vercel.app/secretaria-produccion-eventos</loc>
+	<lastmod>2024-01-23T12:07:57+01:00</lastmod>
+	<priority>0.2</priority>
+</url>
+<url>
+	<loc>https://agenda-eldorado2023.vercel.app/secretaria-accion-social-eventos</loc>
+	<lastmod>2024-01-23T12:07:57+01:00</lastmod>
+	<priority>0.2</priority>
+</url>
+</urlset>
