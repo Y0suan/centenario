@@ -4,10 +4,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  box-sizing: content-box;
 }
 
 /* Estilos generales */
@@ -36,846 +40,255 @@ h2 {
 
 /* ... Otros estilos ... */
 
-/* Estilos para contenedor de tarjetas */
-.div-card {
-  @apply bg-white p-4 flex gap-6 rounded-md shadow-xl;
-  width: 520px;
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid #ccc;
-  cursor: pointer;
+.homeSection{
+  @apply w-screen h-[90vh] bg-[#EBE9EA] flex overflow-hidden
 }
-@media (max-width: 740px) {
-  .div-card {
-    @apply bg-white p-4 flex gap-6 rounded-md shadow-xl;
-    width: 320px;
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    cursor: pointer;
+.homeSectionText{
+  @apply w-2/3 h-[100%] flex justify-center items-center  flex-col
+}
+.homeSectionText h1{
+  font-family: 'Playfair Display', serif;
+  @apply text-gray-900 text-6xl text-start font-semibold w-2/5
+}
+.homeSectionText p{
+  @apply w-2/5
+}
+.naranjaText{
+  @apply text-[#FE8E1E]
+}
+.btnPrimary{
+  @apply bg-[#FE8E1E] text-white px-4 py-2 rounded-full mt-4
+}
+
+
+.homeSectionImg{
+  @apply w-1/3 h-[100%] bg-[#2F4159] relative
+}
+.homeSectionImg .logo{
+position: absolute;
+top: 200px; 
+left: -300px;
+  @apply w-80
+}
+
+.homeSectionImg img{
+  position: absolute;
+  bottom: 50px; 
+  left: -100px;
   }
-}
+  
+.homeSectionImg h2{
+  font-family: 'Shadows Into Light', cursive;
+  @apply text-5xl text-white
 
-/* Estilos para otras secciones */
-/* ... (Continuación de estilos) ... */
-
-/* Estilos para el modal */
-.modal {
-  display: block;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  z-index: 1000;
-}
-/* ... (Otros estilos) ... */
-
-/* Estilos para el contenido del modal */
-.modal-content {
-  background-color: #fff;
-  padding: 29px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  color: #444444;
-}
-.modal-colum {
-  display: flex;
-  gap: 16px;
-}
-
-/* Estilos para el botón de cierre del modal */
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 20px;
-}
-/* ... (Más estilos) ... */
-
-/* Estilos para la capa principal */
-
-/* ... (Otros estilos) ... */
-
-/* Estilos para la tarjeta de imagen y texto */
-
-/* ... (Continuación de estilos) ... */
-
-/* Estilos para el contenedor principal de eventos de la semana */
-
-/* ... (Otros estilos) ... */
-
-/* Estilos para el encabezado */
-
-/* Estilos para capas y elementos específicos */
-.layer-Principal {
-  @apply px-28 py-5;
-  width: 100%;
-  height: 70vh;
-}
-/* ... (Otros estilos) ... */
-
-/* ... (Continúa con el resto de tus estilos) ... */
-/* ... (Continuación y final de estilos) ... */
-
-/* Estilos para tarjetas y contenido */
-.contResult {
-  @apply flex justify-center;
-}
-/* ... (Otros estilos) ... */
-
-/* Estilos para imágenes y texto */
-
-/* ... (Otros estilos) ... */
-
-
-
-/* Final del código */
-
-
-
-.cont-Header {
-  @apply flex px-5 w-full items-center flex-col-reverse sm:items-start sm:flex-row sm:items-center sm:justify-evenly ;
-}
-.logo-Cont {
-  /* font-family: 'EB Garamond', serif; */
-  @apply flex py-4 items-center w-fit gap-4;
-}
-.logo {
-  @apply gap-1 flex text-black m-0 p-0 w-auto text-xl font-bold sm:text-4xl;
-}
-.logo-icon {
-  /* font-family: 'EB Garamond', serif; */
-  @apply text-2xl sm:text-4xl m-0 p-3 px-5 bg-black text-white rounded-sm shadow-sm;
-}
-.imgLogo{
-  @apply sm:h-28 h-16 pt-2
-}
-
-.green{
-  @apply text-greenMuni 
-}
-.blue{
-  @apply text-blueMuni
-}
-.yellow{
-  @apply text-yellowMuni
-}
-
-.ContBuscador{
-  @apply w-full flex justify-center items-center gap-4 sm:w-fit
-}
-.ContBuscador svg{
-  @apply w-6 h-6 
-}
-input{
-  @apply block w-full max-w-xs rounded-md border-0 py-1 pl-4 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6  bg-slate-200 ;
-}
-
-
-
-
-
-
-
-/* Estilos para la barra de navegación */
-.cont-Nav {
-  @apply flex w-screen justify-evenly py-4; 
-}
-.scroll{
-  @apply  flex flex-row overflow-x-auto gap-4 px-4 ;
-}
-.scrollbar-hidden::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hidden {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-.nav-link {
-  @apply text-gray-500 min-w-fit border-b-white border-b-2 ;
-}
-.nav-link:hover {
-  @apply text-gray-600 border-b-gray-600 border-b-2  ease-out duration-300;
-}
-/* ... (Otros estilos) ... */
-
-
-
-.layer-Principal {
-  @apply px-4 py-5 h-72 sm:h-96 sm:px-40 ;
-  width: 100%;
-}
-.layer {
-  background-image: linear-gradient(
-      6deg,
-      rgba(44, 43, 46, 0.708) 0%,
-      rgba(65, 65, 68, 0.338) 100%
-    ),
-    url('https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-  width: 100%;
-  height: 100%;
-  background-color: #444444;
-  @apply rounded-sm p-4;
-}
-.layer h2 {
-  @apply text-4xl w-fit text-white sm:w-1/2 sm:text-6xl;
-  font-family: 'EB Garamond', serif;
-}
-.layer h3 {
-  @apply w-1/2 text-white hidden sm:block sm:text-xl;
-  font-family: 'EB Garamond', serif;
-}
-
-
-
-
-.ContEventSemana {
-  @apply w-screen mt-10 flex flex-col p-4 h-auto sm:px-32;
-}
-.ContEventSemana h1 {
-  @apply text-2xl text-gray-900 block w-fit m-0 p-0 font-bold my-4;
-}
-.EventSemanaContCard {
-  @apply border-t-2 border-gray-200 flex flex-wrap gap-4 p-4;
-  width: 100%;
-  justify-content: space-evenly;
-}
-
-
-
-
-
-.card {
-  width: auto;
-  max-width: 300px;
-  height: fit-content;
-  display: flex;
-  gap: 8px;
-  flex-direction: column;
-  align-items: center;
-  @apply shadow rounded gap-4   sm:w-3/6 p-4
-}
-.card:hover{
-  @apply bg-gray-200 cursor-pointer transition-colors
-}
-.img{
-  position: relative;
-  @apply w-64 overflow-hidden sm:w-52 sm:max-h-52 rounded
-}
-.img .Link{
-  z-index: 1;
-  position: absolute;
-  @apply text-xl text-white p-2
-}
-.img img {
-  width: 100%;
-  height: auto;
-  filter: brightness(80%) contrast(100%) grayscale(10%);
-  @apply rounded
-}
-.text {
-  width: 300px;
-  @apply flex gap-2 flex-col p-2 w-64 ;
-}
-.text h2 {
-  @apply text-gray-800 text-xl font-medium m-0;
-}
-
-.text p {
-  @apply text-xs text-gray-500;
-}
-.text div {
-  @apply flex gap-2;
-}
-/* .text a {
-  @apply text-xs;
-} */
-/* .text a:hover {
-  @apply font-normal text-gray-300;
-} */
-
-
-
-/* CONTENEDOR DE PAGINA DE LA NOTICIA   */
-
-.ContProductPage{
-  @apply w-screen flex flex-col sm:flex-row justify-center pt-10 
-}
-.ContBtn{
-  @apply flex gap-2 flex-col sm:flex-row
-}
-.productPage{
-  @apply w-screen flex flex-col items-center overflow-hidden  
-}
-.ProductPageHeader{
-  @apply flex flex-wrap sm:w-11/12 w-screen justify-center
-}
-.ProductPageHeaderText{
-  @apply flex flex-col justify-center gap-2 p-4 
-}
-.ProductPageHeaderTextBtn{
-  @apply flex gap-2
-}
-.imgProduct{
-  @apply sm:w-[36rem] w-screen p-4 rounded-sm 
-}
-.imgProduct img{
-  @apply rounded-sm 
-}
-.productInfo{
-  @apply sm:w-[36rem] flex  flex-col gap-4 p-4 pb-10
-}
-
-.productInfo h1{
-  @apply text-gray-900 text-start w-fit m-0 p-0 
-}
-.productInfo h2{
-  @apply text-2xl text-gray-900 block w-fit m-0 p-0 font-normal
-}
-.productInfo .link{
-  @apply flex gap-2 items-center bg-blue-400 w-fit p-4 rounded-sm font-bold text-white
-}
- /* --------------------------------------------------- */
-
-
-
-.footer{
-  @apply w-screen h-56 bg-slate-600;
-}
-
-
-
-/* HEADER DE SECRETARIAS */
-.ContSec{
-  @apply px-4 py-5 h-72 sm:h-auto sm:px-40 ;
-  width: 100%;
-}
-.ContSec .Cont{
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  @apply rounded-sm flex;
-}
-.ContSec .text{
-width: 40%;
-height: 100%;
-@apply bg-white
-}
-.ContSec .text h2{
-  @apply text-4xl w-fit sm:w-1/2 sm:text-6xl;
-  /* font-family: 'EB Garamond', serif; */
-}
-.ContSec .img{
-  background-image:
-  linear-gradient(
-      6deg,
-      rgba(44, 43, 46, 0.708) 0%,
-      rgba(65, 65, 68, 0.338) 100%
-    ), url('https://obraspublicas.eldorado.gob.ar/storage/covers/aKW23zzPqdjmLwX3gurgADyRJbQGl7MeYg1PJV3w.jpg') ;
-    width: 100%;
-  height: 100%;
-  background-size: cover;
-  @apply rounded-sm p-4;
-}
-.ContSec .img h2 {
-  @apply text-4xl w-fit text-white sm:w-1/2 sm:text-6xl;
-  /* font-family: 'EB Garamond', serif; */
-}
-.ContSec .img h3 {
-  @apply w-1/2 text-white hidden sm:block sm:text-xl;
-  /* font-family: 'EB Garamond', serif; */
-}
-
-
-.ConSecretaria{
-  @apply border-t-2  border-gray-200 flex flex-wrap gap-4  sm:p-7 sm:px-20;
-  width: 100%;
-  justify-content: center ;
-  overflow: hidden;
-}
-
-
-/* --------------------------------------------- */
-
-.cardXl {
-  width: auto;
-  max-width: 500px;
-  height: fit-content;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  flex-direction: column;
-  @apply shadow rounded gap-4 sm:flex-row sm:w-3/6 p-4
-}
-.cardXl:hover{
-  @apply bg-gray-200 cursor-pointer transition-colors
-}
-.imgXl{
-  position: relative;
-  @apply w-64 overflow-hidden sm:w-52 sm:h-auto 
-}
-.imgXl .Link{
-  z-index: 1;
-  position: absolute;
-  @apply text-xl text-white p-2
-}
-.imgXl img {
-  width: 100%;
-  height: auto;
-  filter: brightness(80%) contrast(100%) grayscale(10%);
-  @apply rounded
-}
-.textXl {
-  width: 300px;
-  @apply flex gap-2 flex-col p-2 w-64 ;
-}
-.textXl h2 {
-  @apply text-gray-800 text-xl font-medium m-0;
-}
-
-.textXl p {
-  @apply text-xs text-gray-500;
-}
-.textXl div {
-  @apply flex gap-2;
-}
-.textXl a {
-  @apply text-xs;
-}
-.textXl a:hover {
-  @apply font-normal text-gray-800;
-}
-
-
-
-
-
-
-
-
-
-
-
-.cardXl2 {
-  width: auto;
-  max-width: 60%;
-  height: 100%;
-  display: flex;
-  gap: 8px;
-  flex-direction: column;
-  @apply shadow rounded gap-4 sm:flex-row 
-}
-.imgXl2{
-  position: relative;
-  @apply w-64 overflow-hidden sm:w-96 sm:h-auto 
-}
-.imgXl2 .Link{
-  z-index: 1;
-  position: absolute;
-  @apply text-xl text-white p-2
-}
-.imgXl2 img {
-  width: 100%;
-  height: auto;
-  filter: brightness(80%) contrast(100%) grayscale(10%);
-  @apply rounded
-}
-.textXl2 {
-  width: 300px;
-  @apply flex gap-2 flex-col p-2 w-64 ;
-}
-.textXl2 h2 {
-  @apply text-gray-800 text-2xl font-medium m-0;
-}
-
-.textXl2 p {
-  @apply text-xs text-gray-500;
-}
-.textXl2 div {
-  @apply flex gap-2;
-}
-.textXl2 a {
-  @apply text-xs;
-}
-.textXl2 a:hover {
-  @apply font-normal text-gray-800;
-}
-
-
-
-.NuevoHome{
-@apply px-40 
-}
-
-
-
-
-
-.CardListCont{
-@apply flex  flex-col sm:w-96 w-fit items-center gap-2
-}
-.cardMini {
-  max-width: fit-content;
-  height: fit-content;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  @apply sm:shadow rounded gap-4 w-screen sm:w-4/6 p-4 flex-col sm:min-w-[400px] sm:flex-row
-}
-.cardMini:hover{
-  @apply bg-gray-200 cursor-pointer transition-colors
-}
-.imgMini{
-  position: relative;
-  @apply w-64 overflow-hidden sm:w-52 sm:max-h-32 rounded
-}
-.imgMini .Link{
-  z-index: 1;
-  position: absolute;
-  @apply text-xl text-white p-2
-}
-.imgMini img {
-  width: 100%;
-  height: auto;
-  filter: brightness(80%) contrast(100%) grayscale(10%);
-  @apply rounded
-}
-.textMini {
-  width: 300px;
-  @apply flex gap-2 flex-col p-2 w-64 ;
-}
-.textMini h2 {
-  @apply text-gray-800 text-xl font-medium m-0;
-}
-
-.textMini p {
-  @apply text-xs text-gray-500;
-}
-.textMini div {
-  @apply flex gap-2;
-}
-.textMini a {
-  @apply text-xs;
-}
-.textMini a:hover {
-  @apply font-normal text-gray-800;
-}
-
-.BtnWpp{
-  @apply flex gap-2 items-center bg-green-500 sm:w-fit p-4 rounded-sm font-bold text-white w-11/12
-}
-
-
-
-
-
-
-
-
-.SectionHome{
-  height: auto;
-  @apply px-4 py-5 h-fit sm:px-40  flex flex-col gap-4  sm:flex-row;
-}
-.SectionHomeBig{
-height: auto;
-}
-.SectionHomeMini{
-@apply flex flex-col gap-2 overflow-hidden 
-}
-
-
-.SectionScroll{
-    height: auto;
-    @apply px-4 py-5 h-fit sm:px-40  flex gap-4  sm:flex-row sm:justify-center overflow-x-auto ;
-}
-.scroll{
-  width: auto;
-}
-
-
-
-
-
-/* BIG CARD  */
-.contBigCard{
-  @apply shadow h-auto sm:h-[95vh]
 }  
-.contBigCard .imagen{
-  border-radius: 2px;
-  filter: brightness(80%) contrast(100%) grayscale(10%);
-  
-  @apply overflow-hidden h-auto  w-[100%] md:w-[40rem] md:h-96
+
+
+.ListDonation{
+  @apply w-[100%] h-64 overflow-hidden flex 
 }
-.contBigCard .imagen img {
-height: auto;
-width: 100%;
+.MiniCardCont{
+  @apply w-1/3 gap-4 h-[100%] p-8 text-white flex  justify-center items-center
 }
-.contBigCard .text{
-  @apply p-4 flex flex-col gap-2 w-[100%] md:w-[40rem] 
+.MiniCardCont p{
+  @apply text-white text-xl font-medium
+}
+.MiniCardCont h2{
+  @apply text-white text-3xl m-0 font-semibold
+}
+.MiniCardText{
+  @apply flex flex-col gap-2
+}
+.MiniCardIcon{
+  @apply text-white text-8xl
+}
+.colorZian{
+  background-image:linear-gradient(
+    6deg, 
+    rgba(30, 173, 154, 0.6) 0%,
+    rgba(30, 173, 154, 0.6) 100%
+  ), url('https://images.unsplash.com/photo-1534644107580-3a4dbd494a95?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
 }
 
-/* ------BIG LOADER---------- */
-
-.contBigCardLoader {
-  border-radius: 2px;
-  position: relative;
-  width: 240px;
-  height: 130px;
-  margin-bottom: 10px;
-  background-color: #e3e3e3;
-  overflow: hidden;
-  @apply h-[40rem] w-[40rem]
+.colorRed{
+  background-image:linear-gradient(
+    6deg, 
+    rgba(226, 181, 30,0.6) 0%,
+    rgba(226, 181, 30,0.6) 100%
+  ),
+   url('https://images.unsplash.com/photo-1638526970908-b18e32b0bc42?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
 }
-
-.contBigCardLoader:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: linear-gradient(110deg, rgba(227, 227, 227, 0) 0%, rgba(227, 227, 227, 0) 40%, rgba(227, 227, 227, 0.5) 50%, rgba(227, 227, 227, 0) 60%, rgba(227, 227, 227, 0) 100%);
-  animation: gradient-animation_2 1.2s linear infinite;
-}
-.contBigCardLoader .imagen{
-  background-color: #cacaca;
-  width: 100%;
-  height: 50%;
-  @apply h-96
-} 
-.contBigCardLoader .text{
-  @apply p-4 flex flex-col gap-2 w-[100%] md:w-[40rem] 
-}
-.contBigCardLoader .text p{
-  background-color: #cacaca;
-  @apply w-40 h-5
-}
-.contBigCardLoader .text h3{
-  background-color: #cacaca;
-  @apply w-[90%] h-10
-}
-.contBigCardLoader .text .btn{
-  background-color: #cacaca;
-    @apply text-white p-2 w-fit rounded text-xl w-11 h-11
-}
-@keyframes gradient-animation_2 {
-  0% {
-    transform: translateX(-100%);
-  }
-
-  100% {
-    transform: translateX(100%);
-  }
-}
-/* --------------------------------------------------- */
-
-/* CARD MEDIANA */
-
-.contMediumCard{
-  @apply shadow h-auto 
-}
-
-.contMediumCard .imagen{
-  border-radius: 2px;
-  filter: brightness(80%) contrast(100%) grayscale(10%);
-  
-  @apply overflow-hidden h-auto  w-80 md:w-72 md:h-36
-}
-
-.contMediumCard .text{
-  @apply p-4 flex flex-col gap-2  md:w-72 
+.colorAmarillo{
+  background-image:linear-gradient(
+    6deg, 
+    rgba(216, 92, 62, 0.6) 0%,
+    rgba(216, 92, 62, 0.6) 100%
+  ),
+   url('https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
 }
 
 
 
-/* ------------------------------------- */
-
-/* CARD CHICA */
-.contMiniCardRow{
-  @apply md:w-96 flex flex-row 
+.Mision{
+  @apply w-[100%] h-96 flex justify-center items-center py-14
 }
-.contMiniCardRow .imagen{
-  border-radius: 2px;
-  filter: brightness(80%) contrast(100%) grayscale(10%);
-  @apply overflow-hidden w-48 h-28  
+.MisionCont{
+  @apply w-2/3 flex gap-8
 }
-
-/* -------------------------------------------------- */
-
-
-.EspacioPublicitario{
-  @apply p-20 w-screen h-fit bg-yellowMuni flex flex flex-col  items-center
+.MisionText{
+  @apply w-2/4 flex-col flex gap-2
 }
-.tituloPrincipalElegante{
-  @apply text-4xl text-gray-950 font-bold  text-center
-  }
-.tituloPrincipalArticulo{
-  @apply w-auto text-4xl text-gray-950 font-bold sm:w-96  m-0
+.color{
+  @apply text-[#FE8E1E]
 }
-
-.tituloPrincipal{
-  @apply text-3xl text-gray-950 font-bold 
+.MisionText h3{
+  font-family: 'Playfair Display', serif;
+@apply text-[#FE8E1E] text-5xl font-bold text-gray-800
 }
-.tituloMediano{
-  @apply text-2xl text-gray-950 font-semibold
+.MisionImg{
+ @apply w-2/4 flex justify-center items-center
 }
-.tituloChico{
-  @apply  text-gray-950 font-semibold
-}
-
-.btnPrincipal{
-  @apply bg-yellowMuni w-fit py-2 px-4 rounded text-white font-medium text-sm
-}
-.btnSecondary{
-  border-radius: 2px;
-  @apply bg-greenMuni w-fit py-2 px-4 text-white font-light text-xs
-}
-.btnBlack{
-  border-radius: 2px;
-  @apply border-gray-950 border-2 w-fit py-2 px-4 text-gray-950 font-bold rounded cursor-pointer text-xs
-}
-.BtnWppFa{
-  @apply bg-greenMuni text-white p-2 w-fit rounded text-xl
-}
-.BtnGmailFa{
-  @apply bg-blueMuni  text-white p-2 w-fit rounded text-xl
-}
-.btnCalendarFa{
-  @apply bg-yellowMuni text-white p-2 w-fit rounded text-xl
+.MisionImg img{
+  @apply w-[500px] rounded shadow-xl
 }
 
 
 
-
-
-
-
-.calendario{
-@apply  hidden md:block ;
+.Proyectos{
+  @apply w-screen h-auto flex justify-center items-center
 }
-.calendario .rbc-calendar{
-  height: 400px;   
-  border-radius: 2px;
-  @apply p-4 sm:mx-40 
+.ProyectosCont{
+  @apply w-2/3 h-auto p-12 flex 
 }
-.calendario .rbc-calendar .rbc-row-segment{
-  @apply text-xs
+.ProyectosImg{
+  @apply w-2/4 flex gap-4
 }
-.rbc-button-link{
-  @apply text-xs p-0 m-0
+.ProyectosImg img{
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 40px;  
+  @apply w-64 shadow-xl
 }
-.rbc-date-cell{
-  @apply p-0 m-0 h-fit 
+.ProyectosImgDiv{
+@apply flex flex-col gap-2
 }
-.rbc-row-segment{
-  @apply h-52
+.ProyectosText{
+  @apply w-2/4 flex flex-col gap-2
 }
-.calendario .rbc-toolbar-label{
-  @apply font-bold text-xl text-gray-950
+.ProyectosText h3{
+  font-family: 'Playfair Display', serif;
+@apply text-[#FE8E1E] text-5xl font-bold text-gray-800
 }
-.calendario .rbc-btn-group button{
-  border-radius: 2px;
-  @apply font-bold text-gray-950
-}
-
-.EventDelDia{
-  @apply px-40 
-}
-.EventDelDia li{
-  @apply border-t-2
-}
-.EventDelDia li:hover{
-  @apply bg-greenMuni text-white
+.ProyectosText .btn{
+@apply w-fit
 }
 
 
-
-
-
-
-.wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
+.Donaciones{
+  @apply w-[100%] h-auto mt-20 flex shadow
+}
+.DonacionesCard{
+  @apply w-2/3 h-auto p-8 flex-col flex gap-3
+}
+.DonacionesCardCenter{
+  @apply flex flex-col justify-center items-center
+}
+.DonacionesCard h3{
+  @apply text-white text-5xl font-extralight
+}
+.DonacionesCard p{
+  @apply text-white 
 }
 
-.ball {
-  --size: 16px;
-  width: var(--size);
-  height: var(--size);
-  border-radius: 11px;
-  margin: 0 10px;
-
-  animation: 2s bounce ease infinite;
-}
-
-.blueL {
-  @apply bg-blueMuni;
-}
-
-.redL {
-  background-color: #ea4436;
-  animation-delay: 0.25s;
-}
-
-.yellowL {
-  @apply bg-yellowMuni;
-  animation-delay: 0.5s;
-}
-
-.greenL {
-  @apply bg-greenMuni;
-  animation-delay: 0.75s;
-}
-
-@keyframes bounce {
-  50% {
-    transform: translateY(25px);
-  }
+.colorZianFuerte {
+  background-image:linear-gradient(
+    6deg, 
+    rgba(30, 173, 154, 0.8) 0%,
+    rgba(30, 173, 154, 0.8) 100%
+  ), url('https://images.unsplash.com/photo-1534644107580-3a4dbd494a95?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
 }
 
 
-.btnCalendar{
-  border-radius: 2px;
-  @apply text-sm p-1 mx-4 text-white text-center font-normal
+.colorRedFuerte{
+  background-image:linear-gradient(
+    6deg, 
+    rgba(226, 181, 30,0.8) 0%,
+    rgba(226, 181, 30,0.8) 100%
+  ),
+   url('https://images.unsplash.com/photo-1638526970908-b18e32b0bc42?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  transition: 2s;
+
+}
+.colorRedFuerte:hover{
+  background-image:linear-gradient(
+    6deg, 
+    rgba(226, 181, 30,0.9) 0%,
+    rgba(226, 181, 30,0.9) 100%
+  ),
+   url('https://images.unsplash.com/photo-1638526970908-b18e32b0bc42?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  transition: 2s;
+}
+.colorAmarilloFuerte{
+  background-image:linear-gradient(
+    6deg, 
+    rgba(216, 92, 62, 0.8) 0%,
+    rgba(216, 92, 62, 0.8) 100%
+  ),
+   url('https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+}
+.btnSecondari{
+  transition: 0.5s;
+  @apply bg-slate-800 flex w-fit text-white px-4 py-2 shadow-xl rounded-full
+}
+.btnSecondari:hover{
+  transition: 0.5s;
+  @apply bg-[#FE8E1E]
+
 }
 
 
-
-
-.contLoader {
-  border-radius: 2px;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin-bottom: 10px;
-  overflow: hidden;
-  @apply h-[40rem] w-[40rem]
+.Cuidadoresdelacasa{
+  @apply w-[100%] h-[70vh] flex
+}
+.CuidadoresdelacasaText{
+@apply w-2/3 gap-2 h-[100%] bg-[#EBE9EA] flex flex-col justify-center items-center
+}
+.CuidadoresdelacasaText h3{
+  font-family: 'Playfair Display', serif;
+  @apply text-gray-900 text-6xl text-start font-semibold w-2/5
+}
+.CuidadoresdelacasaText h4{
+ 
+  @apply text-[#FE8E1E] text-2xl text-start font-semibold w-2/5
+}
+.CuidadoresdelacasaText p{
+  @apply w-2/5
+}
+.CuidadoresdelacasaImg{
+@apply w-1/3 h-[100%] bg-[#2F4159] overflow-hidden
 }
 
-.contLoader:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  top: 0;
-  left: 0;
-  background: linear-gradient(110deg, rgba(227, 227, 227, 0) 0%, rgba(227, 227, 227, 0) 40%, rgba(227, 227, 227, 0.5) 50%, rgba(227, 227, 227, 0) 60%, rgba(227, 227, 227, 0) 100%);
-  animation: gradient-animation_2 1.2s linear infinite;
+
+.Layout{
+  z-index: 1;
+  @apply w-[100%] h-auto flex bg-[#1c1d1d00] justify-evenly py-4 items-center absolute 
 }
-.contLoader .icon{
-  width: 200px;
-  height: 300px;
-  @apply h-96 text-[#cacaca]
+.cont-Nav{
+  @apply w-2/3 flex 
+}
+.scroll{
+  @apply w-[100%] flex gap-4
+}
+.nav-link{
+  transition: 0.5s;
+}
+.nav-link:hover{
+  transition: 0.5s;
+  @apply bg-orange-100 rounded-full p-2
 }

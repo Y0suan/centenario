@@ -1,24 +1,23 @@
-import LoaderCard from '@/Component/Card/LoaderCard';
-import Layout from '@/Component/Layoud';
-import Loader from '@/Component/Loader';
+import { Cuidadoresdelacasa } from '@/Component/Cuidadoresdelacasa';
+import Donaciones from '@/Component/Donaciones';
+import { Home } from '@/Component/Home';
+import { Layout } from '@/Component/Layout/Layout';
+import { ListDonation } from '@/Component/ListDonation';
+import Mision from '@/Component/Mision';
+import { Proyectos } from '@/Component/Proyectos';
 import React, { useEffect, lazy, Suspense } from 'react';
 
-const CalendarPage = lazy(() => import('@/Component/Calendar/Calendar'));
-const SectionHome = lazy(() => import('@/Component/Section/SectionHome'));
-const SectionScroll = lazy(() => import('@/Component/Section/SectionScroll'));
-
-const LoaderFallback = () => <Loader />;
 
 export default function HomePage() {
   return (
     <>
-      <Layout>
-        <Suspense fallback={<LoaderFallback />}>
-          <SectionHome />
-          <CalendarPage />
-          <SectionScroll />
-        </Suspense>
-      </Layout>
+    <Layout/>
+    <Home/>
+    <ListDonation/>
+    <Mision/>
+    <Proyectos/>
+    <Donaciones/>
+    <Cuidadoresdelacasa/>
     </>
   );
 }
