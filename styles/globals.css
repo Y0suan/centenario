@@ -16,11 +16,14 @@
 
 /* Estilos generales */
 .body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   display: flex;
   width: 100%;
   flex-direction: column;
   height: auto;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /* Estilos de títulos */
@@ -41,23 +44,23 @@ h2 {
 /* ... Otros estilos ... */
 
 .homeSection{
-  @apply w-screen h-[90vh] bg-[#EBE9EA] flex overflow-hidden
+  @apply  w-screen sm:h-[100vh] h-auto  bg-[#EBE9EA] flex overflow-hidden sm:flex-row flex-col  sm:p-0 p-4 sm:py-0 py-16 justify-center items-center 
 }
 .homeSectionText{
-  @apply w-2/3 h-[100%] flex justify-center items-center  flex-col
+  @apply sm:w-4/5 h-[100%] flex justify-center items-center  flex-col w-screen 
 }
 .homeSectionText h1{
   font-family: 'Playfair Display', serif;
-  @apply text-gray-900 text-6xl text-start font-semibold w-2/5
+  @apply text-gray-900 sm:text-6xl text-5xl sm:text-start font-semibold sm:w-3/6 w-[80%]  text-center
 }
 .homeSectionText p{
-  @apply w-2/5
+  @apply sm:w-3/6 w-screen sm:p-0 p-4
 }
 .naranjaText{
   @apply text-[#FE8E1E]
 }
 .btnPrimary{
-  @apply bg-[#FE8E1E] text-white px-4 py-2 rounded-full mt-4
+  @apply bg-[#FE8E1E] text-white px-4 py-2 rounded-sm mt-4 text-sm sm:text-base
 }
 
 
@@ -75,6 +78,8 @@ left: -300px;
   position: absolute;
   bottom: 50px; 
   left: -100px;
+  visibility: collapse;
+  @apply sm:visible
   }
   
 .homeSectionImg h2{
@@ -85,22 +90,22 @@ left: -300px;
 
 
 .ListDonation{
-  @apply w-[100%] h-64 overflow-hidden flex 
+  @apply w-[100%] sm:h-64 overflow-hidden flex  h-fit
 }
 .MiniCardCont{
-  @apply w-1/3 gap-4 h-[100%] p-8 text-white flex  justify-center items-center
+  @apply w-1/3 gap-4 h-[100%]  p-8 text-white flex  justify-center items-center sm:flex-row flex-col
 }
 .MiniCardCont p{
-  @apply text-white text-xl font-medium
+  @apply text-white sm:text-xl font-medium 
 }
 .MiniCardCont h2{
-  @apply text-white text-3xl m-0 font-semibold
+  @apply text-white sm:text-3xl m-0 font-semibold text-3xl
 }
 .MiniCardText{
   @apply flex flex-col gap-2
 }
 .MiniCardIcon{
-  @apply text-white text-8xl
+  @apply text-white text-8xl  sm:block hidden
 }
 .colorZian{
   background-image:linear-gradient(
@@ -133,13 +138,13 @@ left: -300px;
 
 
 .Mision{
-  @apply w-[100%] h-96 flex justify-center items-center py-14
+  @apply w-[100%] sm:h-96 h-auto flex  justify-center items-center  sm:py-64 py-24
 }
 .MisionCont{
-  @apply w-2/3 flex gap-8
+  @apply sm:w-2/3 flex gap-8 sm:flex-row flex-col sm:p-0 p-4
 }
 .MisionText{
-  @apply w-2/4 flex-col flex gap-2
+  @apply sm:w-2/4 flex-col flex gap-2
 }
 .color{
   @apply text-[#FE8E1E]
@@ -149,7 +154,7 @@ left: -300px;
 @apply text-[#FE8E1E] text-5xl font-bold text-gray-800
 }
 .MisionImg{
- @apply w-2/4 flex justify-center items-center
+ @apply sm:w-2/4 flex justify-center items-center 
 }
 .MisionImg img{
   @apply w-[500px] rounded shadow-xl
@@ -158,24 +163,24 @@ left: -300px;
 
 
 .Proyectos{
-  @apply w-screen h-auto flex justify-center items-center
+  @apply w-screen h-auto flex justify-center items-center sm:pb-0 pb-10
 }
 .ProyectosCont{
-  @apply w-2/3 h-auto p-12 flex 
+  @apply sm:w-4/5 h-auto sm:p-12 p-4 flex gap-4  w-screen sm:flex-row flex-col-reverse 
 }
 .ProyectosImg{
-  @apply w-2/4 flex gap-4
+  @apply sm:w-2/4 flex gap-4 pt-8  sm:pt-0
 }
 .ProyectosImg img{
   border-top-left-radius: 50px;
   border-bottom-right-radius: 40px;  
-  @apply w-64 shadow-xl
+  @apply sm:w-60 shadow-xl  w-52
 }
 .ProyectosImgDiv{
 @apply flex flex-col gap-2
 }
 .ProyectosText{
-  @apply w-2/4 flex flex-col gap-2
+  @apply sm:w-2/4 flex flex-col gap-2 sm:p-0 h-auto
 }
 .ProyectosText h3{
   font-family: 'Playfair Display', serif;
@@ -253,31 +258,57 @@ left: -300px;
 }
 
 
+.Donaciones2{
+  @apply w-screen sm:h-[70vh] flex justify-center items-center gap-8 h-auto flex-col sm:flex-row py-24
+}
+.Donaciones2 h3{
+  @apply text-4xl w-80 text-gray-800 font-semibold
+}
+.ListDonaciones2{
+  @apply flex flex-col gap-4
+}
+.ListDonaciones2 .link{
+  border: 1px solid;
+  @apply border-gray-800  text-center p-4 rounded shadow
+}
+.ListDonaciones2 .link:hover{
+  border: 1px solid;
+  @apply border-transparent  text-center p-4 rounded bg-[#FE8E1E] text-white shadow
+}
+.ListDonaciones2 .link2{
+  @apply border-gray-800  text-center p-4 rounded bg-[#FE8E1E] text-white shadow
+}
+
+
 .Cuidadoresdelacasa{
-  @apply w-[100%] h-[70vh] flex
+  @apply w-[100%]  flex sm:h-[80vh] flex-col sm:flex-row
 }
 .CuidadoresdelacasaText{
-@apply w-2/3 gap-2 h-[100%] bg-[#EBE9EA] flex flex-col justify-center items-center
+@apply sm:w-2/3 w-screen gap-2 sm:h-[100%] bg-[#EBE9EA] flex flex-col justify-center items-center py-10
 }
 .CuidadoresdelacasaText h3{
   font-family: 'Playfair Display', serif;
-  @apply text-gray-900 text-6xl text-start font-semibold w-2/5
+  @apply text-gray-900 text-6xl text-start font-semibold sm:w-3/5 sm:p-0 p-4 
 }
 .CuidadoresdelacasaText h4{
  
-  @apply text-[#FE8E1E] text-2xl text-start font-semibold w-2/5
+  @apply text-[#FE8E1E] text-2xl text-start font-semibold sm:w-3/5 sm:p-0 p-4 
 }
 .CuidadoresdelacasaText p{
-  @apply w-2/5
+  @apply sm:w-3/5 sm:p-0 p-4 
 }
 .CuidadoresdelacasaImg{
-@apply w-1/3 h-[100%] bg-[#2F4159] overflow-hidden
+@apply sm:w-1/3 h-[100%] flex justify-center items-center overflow-hidden  p-10 bg-[#EBE9EA]
+}
+.CuidadoresdelacasaImg img{
+  clip-path: xywh(0 5px 100% 75% round 15% 0);
+  @apply rounded shadow 
 }
 
 
 .Layout{
   z-index: 1;
-  @apply w-[100%] h-auto flex bg-[#1c1d1d00] justify-evenly py-4 items-center absolute 
+  @apply  w-[100%] h-auto flex bg-[#1c1d1d00] justify-evenly py-4 items-center absolute 
 }
 .cont-Nav{
   @apply w-2/3 flex 
@@ -291,4 +322,41 @@ left: -300px;
 .nav-link:hover{
   transition: 0.5s;
   @apply bg-orange-100 rounded-full p-2
+}
+
+
+
+
+
+
+
+
+
+
+.Hitoria{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: auto;
+  overflow: hidden;
+}
+.QuienesSomos{
+  @apply w-screen h-auto flex bg-[#EBE9EA] justify-center items-center py-32
+}
+.QuienesSomos .Text{
+  @apply w-2/5 flex flex-col 
+}
+.QuienesSomos .Text h1{
+  /* font-family: 'Playfair Display', serif; */
+  @apply text-gray-800 text-5xl font-semibold text-start
+}
+.QuienesSomos .Text a{
+  /* font-family: 'Playfair Display', serif; */
+  @apply text-[#FE8E1E] text-start
+}
+.QuienesSomos img{
+  @apply w-96 rounded shadow-xl
 }

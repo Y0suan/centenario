@@ -1,9 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  compiler :{
-    styledComponents:true,
+// next.config.js
+module.exports = {
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback.fs = false; // Esto es para solucionar problemas de compatibilidad de tailwindcss
+    }
+    return config;
   },
-}
-
-module.exports = nextConfig
+  future: {
+    webpack5: true, // Esto es para usar webpack 5, si es necesario
+  },
+};

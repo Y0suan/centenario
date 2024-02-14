@@ -10,7 +10,7 @@ export const Home = () => {
             <Link className='btnPrimary' href={'/historia'} >Nuestra Historia</Link>
         </div>
         <div className='homeSectionImg' >
-            <img  className='logo' src='https://res.cloudinary.com/dzqdjsrez/image/upload/v1706524179/logocente-removebg-preview_witgpt.png' ></img>
+            {/* <img  className='logo' src='https://res.cloudinary.com/dzqdjsrez/image/upload/v1706524179/logocente-removebg-preview_witgpt.png' ></img> */}
             <img src='https://res.cloudinary.com/dzqdjsrez/image/upload/v1706699890/100__2_-removebg-preview_tanxlw.png' ></img>
             
             </div>     
