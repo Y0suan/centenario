@@ -1,3 +1,4 @@
+import { NuestraHistoria } from '@/Component/Historia/NuestraHistoria'
 import { QuienesSomos } from '@/Component/Historia/QuienesSomos'
 import NavbarResponsivo from '@/Component/NavResponsivo'
 import React from 'react'
@@ -7,6 +8,7 @@ const Historia = () => {
     <div>
         <NavbarResponsivo/>
         <QuienesSomos/>
+        <NuestraHistoria/>
     </div>
   )
 }

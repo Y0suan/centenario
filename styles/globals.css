@@ -44,14 +44,14 @@ h2 {
 /* ... Otros estilos ... */
 
 .homeSection{
-  @apply  w-screen sm:h-[100vh] h-auto  bg-[#EBE9EA] flex overflow-hidden sm:flex-row flex-col  sm:p-0 p-4 sm:py-0 py-16 justify-center items-center 
+  @apply  w-screen sm:h-[100vh] h-auto  bg-[#EBE9EA] flex overflow-hidden sm:flex-row flex-col  sm:p-0 p-4  sm:py-0 py-24  sm:pb-0 pb-16 justify-center items-center 
 }
 .homeSectionText{
   @apply sm:w-4/5 h-[100%] flex justify-center items-center  flex-col w-screen 
 }
 .homeSectionText h1{
   font-family: 'Playfair Display', serif;
-  @apply text-gray-900 sm:text-6xl text-5xl sm:text-start font-semibold sm:w-3/6 w-[80%]  text-center
+  @apply text-gray-900 sm:text-6xl text-4xl sm:text-start font-semibold sm:w-3/6 w-[80%]  text-center
 }
 .homeSectionText p{
   @apply sm:w-3/6 w-screen sm:p-0 p-4
@@ -90,7 +90,7 @@ left: -300px;
 
 
 .ListDonation{
-  @apply w-[100%] sm:h-64 overflow-hidden flex  h-fit
+  @apply w-[100%] sm:h-64 overflow-hidden flex  h-44
 }
 .MiniCardCont{
   @apply w-1/3 gap-4 h-[100%]  p-8 text-white flex  justify-center items-center sm:flex-row flex-col
@@ -141,7 +141,7 @@ left: -300px;
   @apply w-[100%] sm:h-96 h-auto flex  justify-center items-center  sm:py-64 py-24
 }
 .MisionCont{
-  @apply sm:w-2/3 flex gap-8 sm:flex-row flex-col sm:p-0 p-4
+  @apply sm:w-2/3 flex gap-8 sm:flex-row flex-col sm:p-0 p-8 w-96
 }
 .MisionText{
   @apply sm:w-2/4 flex-col flex gap-2
@@ -359,4 +359,76 @@ left: -300px;
 }
 .QuienesSomos img{
   @apply w-96 rounded shadow-xl
+}
+
+.NuestraHistoria{
+  @apply w-screen overflow-hidden flex flex-col p-40 py-24 m-auto 
+}
+.NuestraHistoria .ContImgText{
+  @apply flex gap-4 justify-center items-center
+}
+.NuestraHistoria .ContImgText div{
+  @apply flex flex-col w-2/4 gap-2
+}
+.NuestraHistoria .ContImgText img{
+  @apply flex flex-col w-2/4  shadow
+}
+.NuestraHistoria .ContImgText div h2{
+  font-family: 'Playfair Display', serif; 
+  @apply text-gray-800 text-5xl font-semibold text-start
+}
+
+.Actividades{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: auto;
+  overflow: hidden;
+}
+
+.CursosYCapacitaciones{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: auto;
+  overflow: hidden;
+  @apply flex pt-20 p-40 gap-4 bg-[#F2F2F2]
+}
+.CursosYCapacitaciones h1{
+  @apply text-gray-800 text-4xl font-medium text-start border-b-[1px] border-gray-300 py-4 w-[100%]
+}
+.CursosYCapacitaciones .cont{
+  @apply flex gap-4
+}
+
+
+.CardMediana{
+  @apply w-72 bg-white  shadow-sm
+}
+.CardMediana img{
+  @apply h-1/2
+}
+.CardMediana div{
+  @apply flex flex-col p-4 gap-2 justify-between  h-1/2
+}
+.CardMediana div h3{
+  @apply text-lg font-medium text-gray-900
+}
+.CardMediana div p{
+  @apply text-sm font-normal text-gray-600
+}
+.CardMediana div .Link{
+  @apply bg-sky-500 text-white text-center py-2 rounded
+}
+.CardMediana div .Link:hover{
+  @apply bg-sky-600 text-white text-center py-2 rounded
+}
+.etiqueta{
+  @apply  bg-[#FE8E1E] uppercase w-fit py-1 px-3 text-xs font-semibold rounded-sm absolute mt-2
 }

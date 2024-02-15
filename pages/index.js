@@ -18,7 +18,6 @@ export default function HomePage() {
     <ListDonation/>
     <Mision/>
     <Proyectos/>
-    {/* <Donaciones/> */}
     <Donaciones2/>
     <Cuidadoresdelacasa/>
     </div>

@@ -36,22 +36,22 @@ const NavbarResponsivo = () => {
         <div className="links">
           <ul>
             <li>
-              <Link href="/">
+              <Link href="/Historia">
                 <p>Historia</p>
               </Link>
             </li>
             <li>
-              <Link href="/acerca">
+              <Link href="/Trabajo">
                 <p>Trabajo</p>
               </Link>
             </li>
             <li>
-              <Link href="/contacto">
+              <Link href="/Proyectos">
                 <p>Proyectos</p>
               </Link>
             </li>
             <li>
-              <Link href="/contacto">
+              <Link href="/Actividades">
                 <p>Actividades</p>
               </Link>
             </li>
@@ -66,9 +66,29 @@ const NavbarResponsivo = () => {
         <Link href={'/'} className='btnSecondari' >Hazte socio</Link>
 
         <div className="hamburger-menu" onClick={toggleLinks}>
-          <div className="line"></div>
-          <div className="line"></div>
-          <div className="line"></div>
+          {showLinks ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="feather feather-x close-icon"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          ) : (
+            <>
+              <div className="line"></div>
+              <div className="line"></div>
+              <div className="line"></div>
+            </>
+          )}
         </div>
       </div>
       <style jsx>{`
@@ -96,12 +116,14 @@ const NavbarResponsivo = () => {
           margin: 0;
           padding: 0;
           display: flex;
+          gap:8px;
         }
         li {
           margin-right: 1rem;
         }
         p {
-          color: ${scrolled ? 'rgba(255, 255, 255, 0.7)' : 'rgb(80, 79, 79)'};
+          color: ${scrolled ? 'rgba(255, 255, 255, 0.9)' : 'white'};
+          font-size:24px;
           text-decoration: none;
         }
         .hamburger-menu {
@@ -115,12 +137,18 @@ const NavbarResponsivo = () => {
           background-color: ${scrolled ? 'rgba(255, 255, 255, 0.7)' : 'white'};
           margin: 3px 0;
         }
+        .close-icon {
+          width: 30px;
+          height: 30px;
+          color: ${scrolled ? 'rgba(255, 255, 255, 0.7)' : 'white'};
+          cursor: pointer;
+        }
         @media (max-width: 600px) {
           .nav-container.show .links {
             position: fixed;
-            top: 0;
+            top: 70px;
             left: 0;
-            height: 100vh;
+            height: 90vh;
             width: 100%;
             background-color: #333;
             display: flex;
