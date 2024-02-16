@@ -51,19 +51,20 @@ h2 {
 }
 .homeSectionText h1{
   font-family: 'Playfair Display', serif;
-  @apply text-gray-900 sm:text-6xl text-4xl sm:text-start font-semibold sm:w-3/6 w-[80%]  text-center
+  @apply text-gray-900 sm:text-7xl text-4xl sm:text-start font-semibold sm:w-4/6 w-[80%]  text-center
 }
 .homeSectionText p{
-  @apply sm:w-3/6 w-screen sm:p-0 p-4
+  @apply sm:w-4/6 w-screen sm:p-0 p-4 text-gray-600 font-normal sm:text-lg
 }
 .naranjaText{
   @apply text-[#FE8E1E]
 }
 .btnPrimary{
-  @apply bg-[#FE8E1E] text-white px-4 py-2 rounded-sm mt-4 text-sm sm:text-base
+  @apply bg-[#FE8E1E] text-white px-4 py-2 rounded-sm mt-4 text-sm sm:text-base 
 }
 
 
+/* sm:relative sm:left-[-240px] */
 .homeSectionImg{
   @apply w-1/3 h-[100%] bg-[#2F4159] relative
 }
@@ -141,10 +142,10 @@ left: -300px;
   @apply w-[100%] sm:h-96 h-auto flex  justify-center items-center  sm:py-64 py-24
 }
 .MisionCont{
-  @apply sm:w-2/3 flex gap-8 sm:flex-row flex-col sm:p-0 p-8 w-96
+  @apply sm:w-4/5 flex gap-10 sm:flex-row flex-col sm:p-0 p-8 w-96
 }
 .MisionText{
-  @apply sm:w-2/4 flex-col flex gap-2
+  @apply sm:w-2/4 flex-col flex gap-6
 }
 .color{
   @apply text-[#FE8E1E]
@@ -152,6 +153,9 @@ left: -300px;
 .MisionText h3{
   font-family: 'Playfair Display', serif;
 @apply text-[#FE8E1E] text-5xl font-bold text-gray-800
+}
+.Mision p{
+  @apply text-gray-600
 }
 .MisionImg{
  @apply sm:w-2/4 flex justify-center items-center 
@@ -163,28 +167,31 @@ left: -300px;
 
 
 .Proyectos{
-  @apply w-screen h-auto flex justify-center items-center sm:pb-0 pb-10
+  @apply w-screen h-auto flex justify-center items-center sm:pb-0 pb-10 sm:p-0 
 }
 .ProyectosCont{
-  @apply sm:w-4/5 h-auto sm:p-12 p-4 flex gap-4  w-screen sm:flex-row flex-col-reverse 
+  @apply sm:w-4/5 h-auto sm:py-12 p-4 flex gap-4  w-screen sm:flex-row flex-col-reverse 
 }
 .ProyectosImg{
-  @apply sm:w-2/4 flex gap-4 pt-8  sm:pt-0
+  @apply sm:w-2/4 flex gap-4 pt-0  sm:pt-0
 }
 .ProyectosImg img{
   border-top-left-radius: 50px;
   border-bottom-right-radius: 40px;  
-  @apply sm:w-60 shadow-xl  w-52
+  @apply sm:w-60 shadow-2xl  w-52
 }
 .ProyectosImgDiv{
 @apply flex flex-col gap-2
 }
 .ProyectosText{
-  @apply sm:w-2/4 flex flex-col gap-2 sm:p-0 h-auto
+  @apply sm:w-2/4 flex flex-col gap-6 sm:p-0 h-auto p-8
 }
 .ProyectosText h3{
   font-family: 'Playfair Display', serif;
 @apply text-[#FE8E1E] text-5xl font-bold text-gray-800
+}
+.ProyectosText p{
+  @apply text-gray-600
 }
 .ProyectosText .btn{
 @apply w-fit
@@ -281,10 +288,10 @@ left: -300px;
 
 
 .Cuidadoresdelacasa{
-  @apply w-[100%]  flex sm:h-[80vh] flex-col sm:flex-row
+  @apply w-[100%]  flex sm:h-[80vh] flex-col sm:flex-row 
 }
 .CuidadoresdelacasaText{
-@apply sm:w-2/3 w-screen gap-2 sm:h-[100%] bg-[#EBE9EA] flex flex-col justify-center items-center py-10
+@apply sm:w-2/3 w-screen gap-2 sm:h-[100%] bg-[#EBE9EA] flex flex-col justify-center items-center py-10 p-8 sm:p-0
 }
 .CuidadoresdelacasaText h3{
   font-family: 'Playfair Display', serif;
@@ -295,7 +302,7 @@ left: -300px;
   @apply text-[#FE8E1E] text-2xl text-start font-semibold sm:w-3/5 sm:p-0 p-4 
 }
 .CuidadoresdelacasaText p{
-  @apply sm:w-3/5 sm:p-0 p-4 
+  @apply sm:w-3/5 sm:p-0 p-4 text-gray-600
 }
 .CuidadoresdelacasaImg{
 @apply sm:w-1/3 h-[100%] flex justify-center items-center overflow-hidden  p-10 bg-[#EBE9EA]
@@ -342,41 +349,55 @@ left: -300px;
   flex-direction: column;
   height: auto;
   overflow: hidden;
+  @apply flex sm:flex-row  flex-col
 }
 .QuienesSomos{
-  @apply w-screen h-auto flex bg-[#EBE9EA] justify-center items-center py-32
+  @apply w-screen h-auto flex bg-[#EBE9EA] justify-center items-center py-24 sm:flex-row flex-col
 }
 .QuienesSomos .Text{
-  @apply w-2/5 flex flex-col 
+  @apply sm:w-2/5 flex flex-col sm:p-0 p-8 gap-6 sm:pr-24
 }
 .QuienesSomos .Text h1{
   /* font-family: 'Playfair Display', serif; */
   @apply text-gray-800 text-5xl font-semibold text-start
 }
+.QuienesSomos .text p{
+  @apply text-gray-600
+}
 .QuienesSomos .Text a{
   /* font-family: 'Playfair Display', serif; */
-  @apply text-[#FE8E1E] text-start
+  @apply text-[#FE8E1E] text-start 
 }
 .QuienesSomos img{
   @apply w-96 rounded shadow-xl
 }
+.QuienesSomos .NavLink {
+@apply flex items-center
+}
+.NavLink .IconNavLink{
+  @apply text-[#FE8E1E] 
+}
 
 .NuestraHistoria{
-  @apply w-screen overflow-hidden flex flex-col p-40 py-24 m-auto 
+  @apply w-screen overflow-hidden flex flex-col sm:p-40 py-24 m-auto p-8
 }
 .NuestraHistoria .ContImgText{
-  @apply flex gap-4 justify-center items-center
+  @apply flex gap-4 justify-center items-center flex-col sm:flex-row pb-4 sm:pb-0
 }
 .NuestraHistoria .ContImgText div{
-  @apply flex flex-col w-2/4 gap-2
+  @apply flex flex-col sm:w-2/4 gap-2 
 }
 .NuestraHistoria .ContImgText img{
-  @apply flex flex-col w-2/4  shadow
+  @apply flex flex-col sm:w-2/4  shadow  rounded
 }
 .NuestraHistoria .ContImgText div h2{
   font-family: 'Playfair Display', serif; 
   @apply text-gray-800 text-5xl font-semibold text-start
 }
+.NuestraHistoria .ContImgText div p{
+  @apply text-gray-600 
+}
+
 
 .Actividades{
   margin: 0;
@@ -431,4 +452,35 @@ left: -300px;
 }
 .etiqueta{
   @apply  bg-[#FE8E1E] uppercase w-fit py-1 px-3 text-xs font-semibold rounded-sm absolute mt-2
+}
+
+
+
+.HIstoriaINtro{
+  background-image: linear-gradient(
+    6deg,
+    rgba(44, 43, 46, 0.708) 0%,
+    rgba(65, 65, 68, 0.338) 100%
+  ),
+  url('https://res.cloudinary.com/dzqdjsrez/image/upload/v1708088212/joel-muniz-3k3l2brxmwQ-unsplash_tztzaq.jpg');
+  background-size: cover;
+  @apply w-screen h-[80vh] flex flex-col justify-center items-center sm:gap-8 gap-0 sm:pt-16 relative
+}
+.HIstoriaINtro h1{
+  font-family: 'Playfair Display', serif; 
+  @apply text-7xl 
+}
+.HIstoriaINtro p{
+  @apply text-white sm:w-3/5 sm:p-0 p-8 text-center
+}
+.HIstoriaINtro .icon{
+  border: 1px  solid;
+  border-spacing: 10px;
+  transition: 0.1s; 
+
+  @apply text-white text-3xl font-light rounded-full p-3 absolute bottom-10
+}
+.HIstoriaINtro .icon:hover{
+  transition: 0.1s; 
+  @apply  p-4 text-[#FE8E1E] 
 }

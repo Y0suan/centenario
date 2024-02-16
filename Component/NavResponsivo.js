@@ -52,7 +52,7 @@ const NavbarResponsivo = () => {
             </li>
             <li>
               <Link href="/Actividades">
-                <p>Actividades</p>
+                <p>Cursos</p>
               </Link>
             </li>
             <li>
@@ -120,12 +120,22 @@ const NavbarResponsivo = () => {
         }
         li {
           margin-right: 1rem;
+          border-bottom: 2px solid #ffffff00;
+        }
+        li:hover {
+          margin-right: 1rem;
+          transition: 0.1s;
+
         }
         p {
-          color: ${scrolled ? 'rgba(255, 255, 255, 0.9)' : 'white'};
-          font-size:24px;
+          color: ${scrolled ? 'rgba(255, 255, 255, 0.9)' : 'rgba(33, 32, 32, 0.9)'};
           text-decoration: none;
+          font-weight: 500;
         }
+        p:hover{
+          color:#FE8E1E;
+        }
+
         .hamburger-menu {
           display: none;
           flex-direction: column;

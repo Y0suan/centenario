@@ -1,10 +1,16 @@
+import Link from 'next/link'
 import React from 'react'
+import { IoIosArrowForward } from "react-icons/io";
 
 export const QuienesSomos = () => {
   return (
     <div  className='QuienesSomos' >
         <div className='Text' >
-            <a>Historia</a>
+            <div className='NavLink' >
+              <Link href={'/'} ><p>Inicio</p></Link> 
+              <IoIosArrowForward className='IconNavLink' ></IoIosArrowForward>
+              <Link href={'/Historia'} ><p>Historia</p></Link>
+            </div>
             <h1>Quiénes Somos</h1>
             <p>Somos una comunidad comprometida con el cambio social y el desarrollo integral de nuestra ciudad. Con más de 17 años de experiencia, la Asociación Civil "El Centenario" se ha consolidado como una Agencia de Desarrollo que aborda diversas áreas de acción: social, productiva, deportiva, cultural, ambiental, de capacitación y formulación de proyectos.</p>
         </div>
