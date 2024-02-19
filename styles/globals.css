@@ -15,7 +15,27 @@
 }
 
 /* Estilos generales */
-.body {
+.body  {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: auto;
+  overflow: hidden;
+}
+.trabajo{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: auto;
+  overflow: hidden;
+}
+.historia{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -483,4 +503,61 @@ left: -300px;
 .HIstoriaINtro .icon:hover{
   transition: 0.1s; 
   @apply  p-4 text-[#FE8E1E] 
+}
+
+
+.contPublicacion{
+  @apply w-screen h-auto flex justify-center items-center
+}
+.publicacion{
+  @apply w-4/5 flex sm:flex-row flex-col py-32 gap-20
+}
+.publicacion img{
+  @apply w-1/3
+}
+.publicacion h2{
+  font-family: 'Playfair Display', serif; 
+  @apply text-gray-800 text-5xl font-semibold text-start rounded
+}
+
+
+.footer{
+  @apply w-screen h-auto flex bg-slate-900 text-gray-400 p-8 flex-col sm:flex-row gap-8 justify-evenly
+}
+.footer h2{
+  @apply text-xl text-[#FE8E1E] 
+}
+.footer h1{
+  @apply text-2xl text-[#FE8E1E] flex
+}
+.footer div{
+  @apply flex flex-col justify-start
+}
+.footer p{
+  @apply w-80
+}
+ .redes{
+  @apply flex flex-row gap-2 
+}
+
+.equipo{
+  @apply w-screen h-auto flex justify-center 
+}
+.contEquipo{
+  @apply sm:w-3/4 flex sm:flex-row flex-col
+}
+.cardEquipo{
+@apply sm:w-1/3 p-8 flex flex-col items-center
+}
+.cardEquipo img{
+  @apply h-96
+}
+.cardEquipo .imgCont{
+  @apply overflow-hidden h-72 w-fit rounded-sm shadow-xl
+}
+.cardEquipo h2{
+  @apply text-xl text-gray-900 font-semibold pt-4
+}
+.cardEquipo h4{
+  @apply text-gray-500
 }

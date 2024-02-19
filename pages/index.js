@@ -1,6 +1,7 @@
 import { Cuidadoresdelacasa } from '@/Component/Cuidadoresdelacasa';
 import Donaciones from '@/Component/Donaciones';
 import { Donaciones2 } from '@/Component/Donaciones2';
+import FooterBlack from '@/Component/FooterBlack';
 import { Home } from '@/Component/Home';
 import { Layout } from '@/Component/Layout/Layout';
 import { ListDonation } from '@/Component/ListDonation';
@@ -20,6 +21,7 @@ export default function HomePage() {
     <Proyectos/>
     <Donaciones2/>
     <Cuidadoresdelacasa/>
+    <FooterBlack/>
     </div>
   );
 }
