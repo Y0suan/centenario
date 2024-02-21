@@ -45,19 +45,19 @@ const NavbarResponsivo = () => {
                 <p>Trabajo</p>
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/Proyectos">
                 <p>Proyectos</p>
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link href="/Actividades">
                 <p>Cursos</p>
               </Link>
             </li>
             <li>
-              <Link href="/contacto">
-                <p>Contacto</p>
+              <Link href="/Noticias">
+                <p>Noticias</p>
               </Link>
             </li>
           </ul>

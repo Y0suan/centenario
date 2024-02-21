@@ -1,3 +1,4 @@
+import FooterBlack from '@/Component/FooterBlack'
 import { HIstoriaINtro } from '@/Component/Historia/HIstoriaINtro'
 import { NuestraHistoria } from '@/Component/Historia/NuestraHistoria'
 import { QuienesSomos } from '@/Component/Historia/QuienesSomos'
@@ -37,6 +38,7 @@ const Historia = () => {
         </div>
     </div>
 
+    <h3 className='titulo2' >Conoce a nuestro equipo de trabajo</h3>
     <div className='equipo'>
       <div className='contEquipo'>
         <div className='cardEquipo'>
@@ -62,6 +64,7 @@ const Historia = () => {
         </div>
       </div>
     </div>
+    <FooterBlack/>
     </div>
   )
 }

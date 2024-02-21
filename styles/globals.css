@@ -35,7 +35,7 @@
   height: auto;
   overflow: hidden;
 }
-.historia{
+.historia {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -44,6 +44,16 @@
   flex-direction: column;
   height: auto;
   overflow: hidden;
+}
+.Proyectos{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: auto;
+  overflow: hidden; 
 }
 
 /* Estilos de títulos */
@@ -276,7 +286,7 @@ left: -300px;
 }
 .btnSecondari{
   transition: 0.5s;
-  @apply bg-slate-800 flex w-fit text-white px-4 py-2 shadow-xl rounded-full
+  @apply bg-[#ee851c] flex w-fit text-white px-4 py-2 shadow-xl rounded-full
 }
 .btnSecondari:hover{
   transition: 0.5s;
@@ -369,7 +379,7 @@ left: -300px;
   flex-direction: column;
   height: auto;
   overflow: hidden;
-  @apply flex sm:flex-row  flex-col
+  @apply flex sm:flex-row  flex-col 
 }
 .QuienesSomos{
   @apply w-screen h-auto flex bg-[#EBE9EA] justify-center items-center py-24 sm:flex-row flex-col
@@ -522,7 +532,7 @@ left: -300px;
 
 
 .footer{
-  @apply w-screen h-auto flex bg-slate-900 text-gray-400 p-8 flex-col sm:flex-row gap-8 justify-evenly
+  @apply w-screen h-auto flex bg-[#161616] text-gray-400 p-8 flex-col sm:flex-row gap-8 justify-evenly
 }
 .footer h2{
   @apply text-xl text-[#FE8E1E] 
@@ -543,6 +553,7 @@ left: -300px;
 .equipo{
   @apply w-screen h-auto flex justify-center 
 }
+
 .contEquipo{
   @apply sm:w-3/4 flex sm:flex-row flex-col
 }
@@ -560,4 +571,72 @@ left: -300px;
 }
 .cardEquipo h4{
   @apply text-gray-500
+}
+.titulo2{
+  font-family: 'Playfair Display', serif;
+@apply text-[#FE8E1E] text-5xl font-bold text-gray-800 w-screen text-center
+}
+
+
+
+
+.Carusel{
+
+  @apply  h-auto py-10 
+}
+.ContCarusel{
+  @apply w-fit h-auto flex gap-4
+}
+.CardCarusel{
+  background-image: linear-gradient(
+    6deg,
+    rgba(44, 43, 46, 0.3) 0%,
+    rgba(65, 65, 68, 0.338) 100%
+  ),url('https://images.unsplash.com/photo-1615897570582-285ffe259530?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  @apply w-[700px]  h-[60vh] text-white flex flex-col justify-end p-8
+}
+.CardCarusel h3{
+  font-family: 'Playfair Display', serif;
+  @apply text-5xl w-2/3 font-medium
+}
+.bntperson{
+  @apply w-fit 
+}
+.futbol{
+  background-image:linear-gradient(
+    6deg,
+    rgba(44, 43, 46, 0.3) 0%,
+    rgba(65, 65, 68, 0.338) 100%
+  ), url('https://scontent.fcnq2-1.fna.fbcdn.net/v/t39.30808-6/406466938_767954891811303_2265025529112782216_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeHfKX4nDYFWhu2X9KoGlVANTkDHZTuV8QlOQMdlO5XxCbDfbNvrcUifkcynXUrIA1UInKHpibGYwMpHfPc7s13M&_nc_ohc=AYT1zE-hFLQAX-K3A5o&_nc_oc=AQmlp8fa1NCZ88ieWLKGn1TsYX8HsH086UNYlwpa5cH3FyDpgsve662Ah-4DdEpnkyY&_nc_ht=scontent.fcnq2-1.fna&oh=00_AfAn6q4tFEdaItS_VOd0LxsShnJM_QjmC7L5H__D5opfug&oe=65D9E8A7');
+}
+
+
+
+
+
+
+.Mision2{
+  @apply w-[100%] sm:h-96 h-auto flex  justify-center items-center  sm:py-64 py-24
+}
+.MisionCont2{
+  @apply sm:w-4/5 flex gap-10 sm:flex-row flex-col sm:p-0 p-8 w-96
+}
+.MisionText2{
+  @apply sm:w-2/4 flex-col flex gap-6
+}
+.color{
+  @apply text-[#FE8E1E]
+}
+.MisionText2 h3{
+  font-family: 'Playfair Display', serif;
+@apply text-[#FE8E1E] text-5xl font-bold text-gray-800
+}
+.Mision2 p{
+  @apply text-gray-600
+}
+.MisionImg2{
+ @apply sm:w-2/4 flex justify-center items-center 
+}
+.MisionImg2 img{
+  @apply w-[500px] rounded shadow-xl
 }

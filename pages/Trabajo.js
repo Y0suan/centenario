@@ -1,8 +1,17 @@
 import FooterBlack from '@/Component/FooterBlack'
 import NavbarResponsivo from '@/Component/NavResponsivo'
+import CaruselGrande from '@/Component/TRabajo/Carusel'
+import Carousel from '@/Component/TRabajo/Carusel'
 import TrabajoIntro from '@/Component/TRabajo/TrabajoIntro'
 import Link from 'next/link'
 import React from 'react'
+
+const items = [
+  <div>Texto 1</div>,
+  <div>Texto 2</div>,
+  <div>Texto 3</div>,
+  // Agrega más elementos según sea necesario
+];
 
 const Trabajo = () => {
   return (
@@ -21,10 +30,8 @@ const Trabajo = () => {
             </div>
         </div>
     </div>
+    <CaruselGrande/>
 
-    <div>
-      
-    </div>
     <FooterBlack/>
     </div>
   )
